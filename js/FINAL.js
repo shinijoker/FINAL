@@ -1055,8 +1055,164 @@ var objLoading = function(){
 						console.log(" Deu merda!: "+ error);
 					}//o que acontece se der merda.
 			);
-			//===============================//			
-	
+	//===============================//		
+			
+		//////////////////Postes////////////////////////////////	
+
+
+		///////////////////////Poste 1/////////////////////////
+
+	let loaderFBX = new THREE.FBXLoader();
+
+	loaderFBX.load(
+		'assets/Poste/Poste.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['poste1'] = obj;	
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material = new THREE.MeshLambertMaterial({
+						map: new THREE.TextureLoader().load("assets/Poste/poste.png")}
+					);
+					child.castShadow = true;
+					child.receiveShadow = true;
+				}
+			}
+		);
+		
+		 obj.scale.y = 0.02;
+		 obj.scale.z = 0.02;
+		 obj.scale.x = 0.02;
+		
+		obj.position.y = 4;
+		obj.position.x = 10;
+		obj.position.z = -10;
+			
+		scene.add(obj);
+		console.log("Carregou Poste1");
+		
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+
+	//////////////////Poste 2////////////////////
+		
+	loaderFBX.load(
+		'assets/Poste/Poste.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['poste2'] = obj;	
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material = new THREE.MeshLambertMaterial({
+						map: new THREE.TextureLoader().load("assets/Poste/poste.png")}
+					);
+					child.castShadow = true;
+					child.receiveShadow = true;
+				}
+			}
+		);
+		
+		 obj.scale.y = 0.02;
+		 obj.scale.z = 0.02;
+		 obj.scale.x = 0.02;
+		
+		obj.position.y = 4;
+		obj.position.x = 10;
+		obj.position.z = 0;
+			
+		scene.add(obj);
+		console.log("Carregou Poste2");
+		
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+		//////////////////Poste 3////////////////////
+		
+	loaderFBX.load(
+		'assets/Poste/Poste.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['poste3'] = obj;	
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material = new THREE.MeshLambertMaterial({
+						map: new THREE.TextureLoader().load("assets/Poste/poste.png")}
+					);
+					child.castShadow = true;
+					child.receiveShadow = true;
+				}
+			}
+		);
+		
+		 obj.scale.y = 0.02;
+		 obj.scale.z = 0.02;
+		 obj.scale.x = 0.02;
+		
+		obj.position.y = 4;
+		obj.position.x = -10;
+		obj.position.z = -10;
+			
+		scene.add(obj);
+		console.log("Carregou Poste3");
+		
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+
+//////////////////Poste 4////////////////////
+		
+	loaderFBX.load(
+		'assets/Poste/Poste.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['poste4'] = obj;	
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material = new THREE.MeshLambertMaterial({
+						map: new THREE.TextureLoader().load("assets/Poste/poste.png")}
+					);
+					child.castShadow = true;
+					child.receiveShadow = true;
+				}
+			}
+		);
+		
+		obj.scale.y = 0.02;
+		obj.scale.z = 0.02;
+		obj.scale.x = 0.02;
+		
+		obj.position.y = 4;
+		obj.position.x = 10;
+		obj.position.z = 10;
+			
+		scene.add(obj);
+		console.log("Carregou Poste4");
+		
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
 
 
 };
