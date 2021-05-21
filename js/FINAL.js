@@ -17,7 +17,7 @@ var geometriaA;
 
 var lights =[];
 
-
+// Linha teste para push
 
 //variaveis para animação
 var mixer;
