@@ -1057,6 +1057,106 @@ var objLoading = function(){
 			);
 	//===============================//		
 			
+	// mico //	
+
+			loader.load(
+				'assets/staticAnimals/GoldenLion/GoldenLion2.obj',
+				function(obj){
+					elementos['mico'] = obj;
+
+					obj.traverse( function (child){
+						if (child instanceof THREE.Mesh){
+							child.material = new THREE.MeshLambertMaterial({
+								map: new THREE.TextureLoader().load("assets/staticAnimals/GoldenLion/GoldenLion.jpg"),
+								
+								
+								
+							}
+								
+							);
+							//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+							//child.castShadow = true;
+							//child.receiveShadow = true;
+						}
+					}
+				);
+							obj.scale.y = .2;
+							obj.scale.z = .2;
+							obj.scale.x = .2;
+			
+							obj.position.y = 7.85;
+							obj.position.x = 45;
+							obj.position.z = -49.4;
+				
+							obj.rotation.x=-1.2;
+							obj.rotation.y=0.5;
+							scene.add(new THREE.BoxHelper(obj, 0xffff00));
+				
+							scene.add(obj);
+				
+							obj.children[0].geometry.computeBoundingBox();
+							let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+							staticBounding.push(objBox);
+							console.log("Carregou Ovelha");
+				
+						},//Oque acontece quando terminar!
+						function(andamento){
+							console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+						},//O que acontece enquanto esta carregando
+						function(error){
+							console.log(" Deu merda!: "+ error);
+						}//o que acontece se der merda.
+											
+			);
+			
+	//tree do mico//
+			loader.load(
+				'assets/tree.obj', //arquivo que vamos carregar
+				function(object){
+					
+					object.traverse( function ( child ) {
+								if ( child instanceof THREE.Mesh ) {
+									child.material = new THREE.MeshLambertMaterial();
+									child.material.map = new THREE.TextureLoader().load("assets/texturas/Wood.jpg");
+									child.material.shininess = 0;
+									child.castShadow = true;
+									child.receiveShadow = true;
+								}
+							});
+		
+					object.scale.x =50;
+					object.scale.y = 50;
+					object.scale.z = 50;
+		
+					object.position.z = -50;
+					object.position.x = 50;
+					
+					object.position.y = -7;
+				
+				//object.rotation.y += 1;
+
+			object.castShadow = true;
+			scene.add(new THREE.BoxHelper(object, 0xffff00));
+			//AS 3 LINHAS ABAIXO N ERAM COMENTADAS
+			//object.children[0].geometry.computeBoundingBox();
+			//let objBox = new THREE.Box3().setFromObject(object.children[0]);
+			//staticBounding.push(objBox);
+
+		// camera.lookAt(objCarregado.position)
+
+			scene.add(object);    
+		},//metodo, tudo deu certo
+		function( andamento) {
+			console.log((andamento.loaded / andamento.total *100) + "% pronto!");
+		},//metodo executa enquanto carrega
+		function (error){
+			console.log("Deu caca: " + error);
+		} //metodo deu merda
+		);
+
+
+
+
 		//////////////////Postes////////////////////////////////	
 
 
