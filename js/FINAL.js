@@ -1174,7 +1174,7 @@ var init = function (){
 	camera.position.x = 0;
 	camera.position.y = 1.7;
 	
-	createGui();	
+	//createGui();	
 
 	objLoading();
 
@@ -1208,7 +1208,7 @@ var init = function (){
 
 
 	document.addEventListener('keydown', apertouButao);
-	document.addEventListener('keyup', soltouBotao);
+	//document.addEventListener('keyup', soltouBotao);
 
 };
 
