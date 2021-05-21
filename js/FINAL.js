@@ -2,23 +2,15 @@ var scene; //mundo virtual
 var camera; //area de visualização
 var renderer; //responsavel por renderizar tudo
 var controls; //controle do mouser
-
 var char=[];
-
 var parametrosGUI = {};
 var animationFolder;
-
 var elementos = [];
-
 var velocidade = 0.07;
-
 var ground;
 var geometriaA;
-
 var lights =[];
-
 // Linha teste para push
-
 //variaveis para animação
 var mixer;
 var modelReady = false;
@@ -26,28 +18,19 @@ var animationActions = Array();
 var activeAction;
 var lastAction;
 var loadFinished;
-
-
 var clock = new THREE.Clock();
-
 var objLoading = function(){
 	loader = new THREE.OBJLoader();
 	
-
-
 	
-
 //////////////////////////////////////////////////////////
-
 let loaderFBX = new THREE.FBXLoader();
-
 	//grama 1 direita//
 	loader.load(
 		'assets/chao/retangularGrass/retangularGrass.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['grama1d'] = obj;
-
 			obj.traverse( function (child){
 				if (child instanceof THREE.Mesh){
 					child.material = new THREE.MeshLambertMaterial({
@@ -57,37 +40,26 @@ let loaderFBX = new THREE.FBXLoader();
 					child.receiveShadow = true;
 				}
 			});
-
 			obj.scale.y = .2;
 			obj.scale.z = .2;
 			obj.scale.x = .2;
-
 			obj.position.y = -8.3;
 			obj.position.z = -50;
 			obj.position.x = 50;
-
 			obj.rotation.x-=7.85;
-
 			scene.add(obj);
 			console.log("Carregou!");
-
-		},//Oque acontece quando terminar!
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},//O que acontece enquanto esta carregando
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}//o que acontece se der merda.
+		},
+		
+		
+		
 	);
-
-
 	//grama 2 direita//
 	loader.load(
 		'assets/chao/retangularGrass/retangularGrass.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['grama2d'] = obj;
-
 			obj.traverse( function (child){
 				if (child instanceof THREE.Mesh){
 					child.material = new THREE.MeshLambertMaterial({
@@ -98,37 +70,26 @@ let loaderFBX = new THREE.FBXLoader();
 				}
 			}
 			);
-
 			obj.scale.y = .2;
 			obj.scale.z = .2;
 			obj.scale.x = .2;
-
 			obj.position.y = -8.3;
 			obj.position.z = -150;
 			obj.position.x = 50;
-
 			obj.rotation.x-=7.85;
-
 			scene.add(obj);
 			console.log("Carregou!");
-
-		},//Oque acontece quando terminar!
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},//O que acontece enquanto esta carregando
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}//o que acontece se der merda.
+		},
+		
+		
+		
 	);
-
-
 	//grama 1 esquerda//
 	loader.load(
 		'assets/chao/retangularGrass/retangularGrass.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['grama1e'] = obj;
-
 			obj.traverse( function (child){
 				if (child instanceof THREE.Mesh){
 					child.material = new THREE.MeshLambertMaterial({
@@ -137,40 +98,28 @@ let loaderFBX = new THREE.FBXLoader();
 					child.castShadow = true;
 					child.receiveShadow = true;
 				}
-
 			}
 			);
-
 			obj.scale.y = .2;
 			obj.scale.z = .2;
 			obj.scale.x = .2;
-
 			obj.position.y = -8.3;
 			obj.position.z = -50;
 			obj.position.x = -50;
-
 			obj.rotation.x-=7.85;
-
 			scene.add(obj);
 			console.log("Carregou!");
-
-		},//Oque acontece quando terminar!
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},//O que acontece enquanto esta carregando
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}//o que acontece se der merda.
+		},
+		
+		
+		
 	);
-
-
 	//grama 2 esquerda//
 	loader.load(
 		'assets/chao/retangularGrass/retangularGrass.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['grama2e'] = obj;
-
 			obj.traverse( function (child){
 				if (child instanceof THREE.Mesh){
 					child.material = new THREE.MeshLambertMaterial({
@@ -182,40 +131,27 @@ let loaderFBX = new THREE.FBXLoader();
 				}
 			}
 			);
-
 			obj.scale.y = .2;
 			obj.scale.z = .2;
 			obj.scale.x = .2;
-
 			obj.position.y = -8.3;
 			obj.position.z = -150;
 			obj.position.x = -50;
-
 			obj.rotation.x-=7.85;
-
 			scene.add(obj);
 			console.log("Carregou!");
-
-		},//Oque acontece quando terminar!
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},//O que acontece enquanto esta carregando
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}//o que acontece se der merda.
+		},
+		
+		
+		
 	);
-
-
-
 	//============ CERCA 1D ============//
-
-
 	//cerca1dsul
 	loader.load(
 	'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['ovelha'] = obj;
+			
 			
 			
 			obj.traverse( function (child){
@@ -234,32 +170,23 @@ let loaderFBX = new THREE.FBXLoader();
 					}
 				}
 			);
-
 			 obj.scale.y = 2;
 			 obj.scale.z = 2;
 			 obj.scale.x = 4;
-
 			obj.position.y = -8;
 			obj.position.x = 51;
 			obj.position.z = -20;
-
 			//obj.rotation.x-=1.35;
 			
-
 			scene.add(obj);
-
 			
 			
 			//staticbounding.push(objBox);
 			console.log("Carregou Ovelha");
-
-		},//Oque acontece quando terminar!
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},//O que acontece enquanto esta carregando
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}//o que acontece se der merda.
+		},
+		
+		
+		
 	);
 	
 	//cerca1dnorte
@@ -267,7 +194,7 @@ let loaderFBX = new THREE.FBXLoader();
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['ovelha'] = obj;
+				
 				
 				
 				obj.traverse( function (child){
@@ -302,24 +229,17 @@ let loaderFBX = new THREE.FBXLoader();
 	
 				
 				
-				//staticbounding.push(objBox);
-				console.log("Carregou Ovelha");
 	
-			},//Oque acontece quando terminar!
-			function(andamento){
-				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-			},//O que acontece enquanto esta carregando
-			function(error){
-				console.log(" Deu merda!: "+ error);
-			}//o que acontece se der merda.
+			},
+			
+			
 		);
-
 		//cerca1doeste
 	loader.load(
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['ovelha'] = obj;
+				
 				
 				
 				obj.traverse( function (child){
@@ -354,16 +274,10 @@ let loaderFBX = new THREE.FBXLoader();
 	
 				
 				
-				//staticbounding.push(objBox);
-				console.log("Carregou Ovelha");
 	
-			},//Oque acontece quando terminar!
-			function(andamento){
-				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-			},//O que acontece enquanto esta carregando
-			function(error){
-				console.log(" Deu merda!: "+ error);
-			}//o que acontece se der merda.
+			},
+			
+		
 		);
 		
 		//cerca1dleste
@@ -371,7 +285,7 @@ let loaderFBX = new THREE.FBXLoader();
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['ovelha'] = obj;
+				
 				
 				
 				obj.traverse( function (child){
@@ -406,29 +320,17 @@ let loaderFBX = new THREE.FBXLoader();
 	
 				
 				
-				//staticbounding.push(objBox);
-				console.log("Carregou Ovelha");
 	
-			},//Oque acontece quando terminar!
-			function(andamento){
-				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-			},//O que acontece enquanto esta carregando
-			function(error){
-				console.log(" Deu merda!: "+ error);
-			}//o que acontece se der merda.
+			},
 	);
 	//===============================//
-
-
 	//============ CERCA 2D ============//
-
-
 	//cerca2dsul
 	loader.load(
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['ovelha'] = obj;
+				
 				
 				
 				obj.traverse( function (child){
@@ -463,16 +365,10 @@ let loaderFBX = new THREE.FBXLoader();
 	
 				
 				
-				//staticbounding.push(objBox);
-				console.log("Carregou Ovelha");
 	
-			},//Oque acontece quando terminar!
-			function(andamento){
-				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-			},//O que acontece enquanto esta carregando
-			function(error){
-				console.log(" Deu merda!: "+ error);
-			}//o que acontece se der merda.
+			},
+			
+			
 		);
 		
 		//cerca2dnorte
@@ -480,7 +376,7 @@ let loaderFBX = new THREE.FBXLoader();
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['ovelha'] = obj;
+					
 					
 					
 					obj.traverse( function (child){
@@ -515,16 +411,12 @@ let loaderFBX = new THREE.FBXLoader();
 		
 					
 					
-					//staticbounding.push(objBox);
-					console.log("Carregou Ovelha");
-		
-				},//Oque acontece quando terminar!
-				function(andamento){
-					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-				},//O que acontece enquanto esta carregando
-				function(error){
-					console.log(" Deu merda!: "+ error);
-				}//o que acontece se der merda.
+	
+			
+				},
+				
+				
+					
 			);
 	
 			//cerca2doeste
@@ -532,7 +424,7 @@ let loaderFBX = new THREE.FBXLoader();
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['ovelha'] = obj;
+					
 					
 					
 					obj.traverse( function (child){
@@ -567,16 +459,12 @@ let loaderFBX = new THREE.FBXLoader();
 		
 					
 					
-					//staticbounding.push(objBox);
-					console.log("Carregou Ovelha");
-		
-				},//Oque acontece quando terminar!
-				function(andamento){
-					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-				},//O que acontece enquanto esta carregando
-				function(error){
-					console.log(" Deu merda!: "+ error);
-				}//o que acontece se der merda.
+	
+			
+				},
+				
+				
+					
 			);
 			
 			//cerca2dleste
@@ -584,7 +472,7 @@ let loaderFBX = new THREE.FBXLoader();
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['ovelha'] = obj;
+					
 					
 					
 					obj.traverse( function (child){
@@ -619,29 +507,21 @@ let loaderFBX = new THREE.FBXLoader();
 		
 					
 					
-					//staticbounding.push(objBox);
-					console.log("Carregou Ovelha");
-		
-				},//Oque acontece quando terminar!
-				function(andamento){
-					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-				},//O que acontece enquanto esta carregando
-				function(error){
-					console.log(" Deu merda!: "+ error);
-				}//o que acontece se der merda.
+	
+			
+				},
+				
+				
+					
 		);
 		//===============================//			
-
-
 	//============ CERCA 1E ============//
-
-
 	//cerca1esul
 	loader.load(
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['ovelha'] = obj;
+				
 				
 				
 				obj.traverse( function (child){
@@ -676,16 +556,13 @@ let loaderFBX = new THREE.FBXLoader();
 	
 				
 				
-				//staticbounding.push(objBox);
-				console.log("Carregou Ovelha");
 	
-			},//Oque acontece quando terminar!
-			function(andamento){
-				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-			},//O que acontece enquanto esta carregando
-			function(error){
-				console.log(" Deu merda!: "+ error);
-			}//o que acontece se der merda.
+			},
+			
+			
+			
+				
+			
 		);
 		
 		//cerca1enorte
@@ -693,7 +570,7 @@ let loaderFBX = new THREE.FBXLoader();
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['ovelha'] = obj;
+					
 					
 					
 					obj.traverse( function (child){
@@ -728,16 +605,12 @@ let loaderFBX = new THREE.FBXLoader();
 		
 					
 					
-					//staticbounding.push(objBox);
-					console.log("Carregou Ovelha");
-		
-				},//Oque acontece quando terminar!
-				function(andamento){
-					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-				},//O que acontece enquanto esta carregando
-				function(error){
-					console.log(" Deu merda!: "+ error);
-				}//o que acontece se der merda.
+	
+			
+				},
+				
+				
+					
 			);
 	
 			//cerca1eoeste
@@ -745,7 +618,7 @@ let loaderFBX = new THREE.FBXLoader();
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['ovelha'] = obj;
+					
 					
 					
 					obj.traverse( function (child){
@@ -780,16 +653,12 @@ let loaderFBX = new THREE.FBXLoader();
 		
 					
 					
-					//staticbounding.push(objBox);
-					console.log("Carregou Ovelha");
-		
-				},//Oque acontece quando terminar!
-				function(andamento){
-					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-				},//O que acontece enquanto esta carregando
-				function(error){
-					console.log(" Deu merda!: "+ error);
-				}//o que acontece se der merda.
+	
+			
+				},
+				
+				
+					
 			);
 			
 			//cerca1eleste
@@ -797,7 +666,7 @@ let loaderFBX = new THREE.FBXLoader();
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['ovelha'] = obj;
+					
 					
 					
 					obj.traverse( function (child){
@@ -832,16 +701,12 @@ let loaderFBX = new THREE.FBXLoader();
 		
 					
 					
-					//staticbounding.push(objBox);
-					console.log("Carregou Ovelha");
-		
-				},//Oque acontece quando terminar!
-				function(andamento){
-					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-				},//O que acontece enquanto esta carregando
-				function(error){
-					console.log(" Deu merda!: "+ error);
-				}//o que acontece se der merda.
+	
+			
+				},
+				
+				
+					
 		);
 		//===============================//
 	
@@ -854,7 +719,7 @@ let loaderFBX = new THREE.FBXLoader();
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['ovelha'] = obj;
+					
 					
 					
 					obj.traverse( function (child){
@@ -889,16 +754,10 @@ let loaderFBX = new THREE.FBXLoader();
 		
 					
 					
-					//staticbounding.push(objBox);
-					console.log("Carregou Ovelha");
-		
-				},//Oque acontece quando terminar!
-				function(andamento){
-					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-				},//O que acontece enquanto esta carregando
-				function(error){
-					console.log(" Deu merda!: "+ error);
-				}//o que acontece se der merda.
+	
+			
+				},
+				
 			);
 			
 			//cerca2enorte
@@ -906,7 +765,7 @@ let loaderFBX = new THREE.FBXLoader();
 				'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 					function(obj){
 						//atribui a cena, colore, reposiciona, rotaciona
-						elementos['ovelha'] = obj;
+						
 						
 						
 						obj.traverse( function (child){
@@ -943,16 +802,12 @@ let loaderFBX = new THREE.FBXLoader();
 			
 						
 						
-						//staticbounding.push(objBox);
-						console.log("Carregou Ovelha");
-			
-					},//Oque acontece quando terminar!
-					function(andamento){
-						console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-					},//O que acontece enquanto esta carregando
-					function(error){
-						console.log(" Deu merda!: "+ error);
-					}//o que acontece se der merda.
+		
+					
+					},
+					
+					
+					
 				);
 		
 				//cerca2eoeste
@@ -960,7 +815,7 @@ let loaderFBX = new THREE.FBXLoader();
 				'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 					function(obj){
 						//atribui a cena, colore, reposiciona, rotaciona
-						elementos['ovelha'] = obj;
+						
 						
 						
 						obj.traverse( function (child){
@@ -997,16 +852,12 @@ let loaderFBX = new THREE.FBXLoader();
 			
 						
 						
-						//staticbounding.push(objBox);
-						console.log("Carregou Ovelha");
-			
-					},//Oque acontece quando terminar!
-					function(andamento){
-						console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-					},//O que acontece enquanto esta carregando
-					function(error){
-						console.log(" Deu merda!: "+ error);
-					}//o que acontece se der merda.
+		
+					
+					},
+					
+					
+					
 				);
 				
 				//cerca2eleste
@@ -1014,7 +865,7 @@ let loaderFBX = new THREE.FBXLoader();
 				'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 					function(obj){
 						//atribui a cena, colore, reposiciona, rotaciona
-						elementos['ovelha'] = obj;
+						
 						
 						
 						obj.traverse( function (child){
@@ -1051,39 +902,27 @@ let loaderFBX = new THREE.FBXLoader();
 			
 						
 						
-						//staticbounding.push(objBox);
-						console.log("Carregou Ovelha");
-			
-					},//Oque acontece quando terminar!
-					function(andamento){
-						console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-					},//O que acontece enquanto esta carregando
-					function(error){
-						console.log(" Deu merda!: "+ error);
-					}//o que acontece se der merda.
+		
+					
+					},
+					
+				
 			);
 	//===============================//		
 	
 	// mico //	
-
 			loader.load(
 				'assets/staticAnimals/GoldenLion/GoldenLion2.obj',
 				function(obj){
 					elementos['mico'] = obj;
-
 					obj.traverse( function (child){
 						if (child instanceof THREE.Mesh){
 							child.material = new THREE.MeshLambertMaterial({
 								map: new THREE.TextureLoader().load("assets/staticAnimals/GoldenLion/GoldenLion.jpg"),
-								
-								
-								
 							}
-								
 							);
-							//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
-							//child.castShadow = true;
-							//child.receiveShadow = true;
+							child.castShadow = true;
+							child.receiveShadow = true;
 						}
 					}
 				);
@@ -1103,16 +942,12 @@ let loaderFBX = new THREE.FBXLoader();
 				
 							
 							
-							//staticbounding.push(objBox);
-							console.log("Carregou Ovelha");
-				
-						},//Oque acontece quando terminar!
-						function(andamento){
-							console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-						},//O que acontece enquanto esta carregando
-						function(error){
-							console.log(" Deu merda!: "+ error);
-						}//o que acontece se der merda.
+			
+							
+						},
+						
+						
+					
 											
 			);
 			
@@ -1141,10 +976,8 @@ let loaderFBX = new THREE.FBXLoader();
 					object.position.y = -7;
 				
 				//object.rotation.y += 1;
-
 			object.castShadow = true;			
 		// camera.lookAt(objCarregado.position)
-
 			scene.add(object);    
 		},//metodo, tudo deu certo
 		function( andamento) {
@@ -1160,58 +993,40 @@ let loaderFBX = new THREE.FBXLoader();
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['spider'] = obj;
-
 			let animation;
 			mixer = new THREE.AnimationMixer(obj);
 			animation = mixer.clipAction(obj.animations[1]);
 			animationActions.push(animation);
-
 			animation = mixer.clipAction(obj.animations[2]);
 			animationActions.push(animation);
-
 			animation = mixer.clipAction(obj.animations[3]);
 			animationActions.push(animation);
-
 			animation = mixer.clipAction(obj.animations[4]);
 			animationActions.push(animation);
-
 			animation = mixer.clipAction(obj.animations[5]);
 			animationActions.push(animation);
-
 			animation = mixer.clipAction(obj.animations[6]);
 			animationActions.push(animation);
-
 			animation = mixer.clipAction(obj.animations[7]);
 			animationActions.push(animation);
-
 			animation = mixer.clipAction(obj.animations[8]);
 			animationActions.push(animation);
-
 			animation = mixer.clipAction(obj.animations[9]);
 			animationActions.push(animation);
-
 			animation = mixer.clipAction(obj.animations[10]);
 			animationActions.push(animation);
-
 			animation = mixer.clipAction(obj.animations[11]);
 			animationActions.push(animation);
-
 			animation = mixer.clipAction(obj.animations[12]);
 			animationActions.push(animation);
-
 			animation = mixer.clipAction(obj.animations[13]);
 			animationActions.push(animation);
-
 			animation = mixer.clipAction(obj.animations[14]);
 			animationActions.push(animation);
-
 			animation = mixer.clipAction(obj.animations[0]);
 			animationActions.push(animation);
-
 			activeAction = animation;
-
 			//adiciona as animações a GUI
-
 			
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
@@ -1222,39 +1037,35 @@ let loaderFBX = new THREE.FBXLoader();
 					}
 				}
 			);
-
 			 obj.scale.y = 0.2;
 			 obj.scale.z = 0.2;
 			 obj.scale.x = 0.2;
-
 			obj.position.y = -6.7;
 			obj.position.x = -50;
 			obj.position.z = -50;
-
 			obj.position.y = -7.5;
 			
 			//obj.rotation.x-=1.35;
-
 			scene.add(obj);
 			console.log("Carregou aranha");
 			loadFinished = true;
-
 		});
-
 	// mario //
-
 			loader.load(
 				'assets/animatedAnimals/mario/Mario.obj',
 				function(obj){
 					elementos['mamamia'] = obj;
-
 					obj.traverse( function (child){
 						if (child instanceof THREE.Mesh){
 							child.material = new THREE.MeshLambertMaterial({
 								map: new THREE.TextureLoader().load("assets/animatedAnimals/mario/MarioAlbedo.png"),
-							}
 								
+							}
+							
 							);
+							child.receiveShadow = true;
+							child.castShadow = true;
+
 							
 						}
 					}
@@ -1275,32 +1086,30 @@ let loaderFBX = new THREE.FBXLoader();
 				
 							
 							
-							//staticbounding.push(objBox);
-							console.log("Carregou Ovelha");
-				
-						},//Oque acontece quando terminar!
-						function(andamento){
-							console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-						},//O que acontece enquanto esta carregando
-						function(error){
-							console.log(" Deu merda!: "+ error);
-						}//o que acontece se der merda.
+			
+							
+						},
+						
+						
+					
+						
+							
+						
 											
 			);
-
 	// foca //
-
 			loader.load(
 				'assets/staticAnimals/SeaLion/sealion.obj',
 				function(obj){
 					elementos['seal'] = obj;
-
 					obj.traverse( function (child){
 						if (child instanceof THREE.Mesh){
 							child.material = new THREE.MeshLambertMaterial({
 								
 								map: new THREE.TextureLoader().load("assets/staticAnimals/SeaLion/sealionDiffuse.jpg")
 							});
+							child.receiveShadow = true;
+							child.castShadow = true;
 							
 						}
 					}
@@ -1321,27 +1130,16 @@ let loaderFBX = new THREE.FBXLoader();
 				
 							
 							
-							//staticbounding.push(objBox);
-							console.log("Carregou Ovelha");
-				
-						},//Oque acontece quando terminar!
-						function(andamento){
-							console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-						},//O que acontece enquanto esta carregando
-						function(error){
-							console.log(" Deu merda!: "+ error);
-						}//o que acontece se der merda.
+			
+							
+						},
+						
+						
+						
 											
 			);
-
-
-
-
 		//////////////////Postes////////////////////////////////	
-
-
 	///////////////////////Poste 1/////////////////////////
-
 	loaderFBX.load(
 		'assets/Poste/Poste.fbx',//arquivo que vamos buscar
 		function(obj){
@@ -1369,16 +1167,11 @@ let loaderFBX = new THREE.FBXLoader();
 		scene.add(obj);
 		console.log("Carregou Poste1");
 		
-		},//Oque acontece quando terminar!
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},//O que acontece enquanto esta carregando
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}//o que acontece se der merda.
+		},
+		
+		
+		
 	);
-
-
 	//////////////////Poste 2////////////////////
 		
 	loaderFBX.load(
@@ -1408,13 +1201,10 @@ let loaderFBX = new THREE.FBXLoader();
 		scene.add(obj);
 		console.log("Carregou Poste2");
 		
-		},//Oque acontece quando terminar!
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},//O que acontece enquanto esta carregando
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}//o que acontece se der merda.
+		},
+		
+		
+		
 	);
 		//////////////////Poste 3////////////////////
 		
@@ -1445,15 +1235,11 @@ let loaderFBX = new THREE.FBXLoader();
 		scene.add(obj);
 		console.log("Carregou Poste3");
 		
-		},//Oque acontece quando terminar!
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},//O que acontece enquanto esta carregando
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}//o que acontece se der merda.
+		},
+		
+		
+		
 	);
-
 //////////////////Poste 4////////////////////
 		
 	loaderFBX.load(
@@ -1483,19 +1269,11 @@ let loaderFBX = new THREE.FBXLoader();
 		scene.add(obj);
 		console.log("Carregou Poste4");
 		
-		},//Oque acontece quando terminar!
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},//O que acontece enquanto esta carregando
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}//o que acontece se der merda.
+		},
+		
 	);
-
-
+	
 };
-
-
 //troca a ação do nosso modelo
 const setAction = function(toAction) {
     if (toAction != activeAction) {
@@ -1506,12 +1284,10 @@ const setAction = function(toAction) {
         activeAction.play();
     }
 }
-
 var ambientLightOn = function (){
 	lights['ambient'] = new THREE.AmbientLight(0xffffff,0.5);
 	scene.add(lights['ambient']);
 }
-
 var directionalLightOn = function () {
 	let light = new THREE.DirectionalLight(0xffffff,1);
 	light.shadow.mapSize.width = 4096;
@@ -1520,59 +1296,45 @@ var directionalLightOn = function () {
     light.shadow.camera.bottom = 1000;
     light.shadow.camera.right = -1000
     light.shadow.camera.top = -1000;
-
 	light.position.y = 200;
 	light.position.x = 100;
 	light.target = ground;
-
-
 	scene.add(light);
 	scene.add(light.target)
-
 	lights['sol'] = light;
 }
-
 var pointLightOn1 = function (){
 	let point1 = new THREE.PointLight(0xffffff, 1, 50);
-
 	lights['point1'] = point1;
 	point1.position.x = -15;
 	point1.position.y = 35;
 	point1.position.z = -85;
 	scene.add(lights['point1']);
 }
-
 var pointLightOn2 = function (){
 	let point1 = new THREE.PointLight(0xffffff, 1, 50);
-
 	lights['point2'] = point1;
 	point1.position.x = -15;
 	point1.position.y = 35;
 	point1.position.z = -110;
 	scene.add(lights['point2']);
 }
-
 var pointLightOn3 = function (){
 	let point1 = new THREE.PointLight(0xffffff, 1, 50);
-
 	lights['point3'] = point1;
 	point1.position.x = 15;
 	point1.position.y = 35;
 	point1.position.z = -110;
 	scene.add(lights['point3']);
 }
-
 var pointLightOn4 = function (){
 	let point1 = new THREE.PointLight(0xffffff, 1, 50);
-
 	lights['point4'] = point1;
 	point1.position.x = 15;
 	point1.position.y = 35;
 	point1.position.z = -85;
 	scene.add(lights['point4']);
 }
-
-
 var godSaysLightsOn = function (){
 	ambientLightOn();
 	directionalLightOn();
@@ -1581,10 +1343,6 @@ var godSaysLightsOn = function (){
 	pointLightOn3();
 	pointLightOn4();
 }
-
-
-
-
 var init = function (){
 	scene = new THREE.Scene();
 	scene.background = new THREE.Color(0xcce0ff);
@@ -1597,7 +1355,6 @@ var init = function (){
 						1, //near
 						500 //far
 					);
-
 	
 	
 	renderer = new THREE.WebGLRenderer({antialias: true});
@@ -1611,7 +1368,6 @@ var init = function (){
 	
 	var createGui = function (){
 		const gui = new dat.GUI();
-
 		parametrosGUI = {
 		ambientLight: 0,
 		scalarPuppet: 1,
@@ -1620,7 +1376,6 @@ var init = function (){
 		positionZ: 0,
 		sunLight: 1,
 		};
-
 		let intensidadeLuz = gui.add(parametrosGUI, 'ambientLight').min(0).max(1.2).step(0.1).name("Fases do dia");
 		intensidadeLuz.onChange(function (parametro){
 				if(parametro<= 0.3){
@@ -1694,15 +1449,10 @@ var init = function (){
 		);
 		
 		gui.open();
-
 	}
-
 	createGui();
-
 	objLoading();
-
 	animation();
-
 	
 	//criar um piso.
 	let textureLoad = new THREE.TextureLoader();
@@ -1725,16 +1475,11 @@ var init = function (){
 	ground.position.y-=7.5;
 	scene.add(ground);
 	godSaysLightsOn();
-
 	controls = new THREE.OrbitControls(camera, renderer.domElement);
-
 	scene.fog = new THREE.Fog(0xcce0ff, 100, 500);
-
 	document.addEventListener('keydown', apertouButao);
 };
-
 var key_space = false;
-
 var apertouButao =  function(e){
 	console.log(e.keyCode);
 	if (e.keyCode == 32){ // space
@@ -1742,20 +1487,15 @@ var apertouButao =  function(e){
 		key_space = true;
 	}
 }
-
 var soltouBotao = function(e){
 	console.log(e.keyCode);
 	if (e.keyCode == 32){
 		key_space = false;
 	}
 }
-
-
 var animation = function (){
 	requestAnimationFrame(animation); 
-
 	let delta = clock.getDelta();
-
 	if (loadFinished){
 		console.log("Entrou");
 		mixer.update(delta);
@@ -1763,9 +1503,6 @@ var animation = function (){
 		console.log("Não!!!");
 	}
 	
-
-
 	renderer.render(scene, camera); //tira uma foto do estado e mostra na tela
 }
-
 window.onload = this.init
