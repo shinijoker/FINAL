@@ -58,7 +58,8 @@ var objLoading = function(){
 					child.material = new THREE.MeshLambertMaterial({
 						map: new THREE.TextureLoader().load("assets/chao/retangularGrass/retangularGrass.jpg")}
 						);
-					
+					child.castShadow = true;
+					child.receiveShadow = true;
 				}
 			});
 
@@ -97,7 +98,8 @@ var objLoading = function(){
 					child.material = new THREE.MeshLambertMaterial({
 						map: new THREE.TextureLoader().load("assets/chao/retangularGrass/retangularGrass.jpg")}
 					);
-					
+					child.castShadow = true;
+					child.receiveShadow = true;
 				}
 			}
 			);
@@ -137,8 +139,10 @@ var objLoading = function(){
 					child.material = new THREE.MeshLambertMaterial({
 						map: new THREE.TextureLoader().load("assets/chao/retangularGrass/retangularGrass.jpg")}
 					);
-					
+					child.castShadow = true;
+					child.receiveShadow = true;
 				}
+
 			}
 			);
 
@@ -177,6 +181,8 @@ var objLoading = function(){
 					child.material = new THREE.MeshLambertMaterial({
 						map: new THREE.TextureLoader().load("assets/chao/retangularGrass/retangularGrass.jpg")}
 					);
+					child.castShadow = true;
+					child.receiveShadow = true;
 					
 				}
 			}
@@ -280,8 +286,8 @@ var objLoading = function(){
 								
 							);
 							//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
-							//child.castShadow = true;
-							//child.receiveShadow = true;
+							child.castShadow = true;
+							child.receiveShadow = true;
 						}
 					}
 				);
@@ -332,8 +338,8 @@ var objLoading = function(){
 								
 							);
 							//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
-							//child.castShadow = true;
-							//child.receiveShadow = true;
+							child.castShadow = true;
+							child.receiveShadow = true;
 						}
 					}
 				);
@@ -384,8 +390,8 @@ var objLoading = function(){
 								
 							);
 							//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
-							//child.castShadow = true;
-							//child.receiveShadow = true;
+							child.castShadow = true;
+							child.receiveShadow = true;
 						}
 					}
 				);
@@ -493,8 +499,8 @@ var objLoading = function(){
 									
 								);
 								//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
-								//child.castShadow = true;
-								//child.receiveShadow = true;
+								child.castShadow = true;
+								child.receiveShadow = true;
 							}
 						}
 					);
@@ -545,8 +551,8 @@ var objLoading = function(){
 									
 								);
 								//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
-								//child.castShadow = true;
-								//child.receiveShadow = true;
+								child.castShadow = true;
+								child.receiveShadow = true;
 							}
 						}
 					);
@@ -597,8 +603,8 @@ var objLoading = function(){
 									
 								);
 								//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
-								//child.castShadow = true;
-								//child.receiveShadow = true;
+								child.castShadow = true;
+								child.receiveShadow = true;
 							}
 						}
 					);
@@ -706,8 +712,8 @@ var objLoading = function(){
 									
 								);
 								//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
-								//child.castShadow = true;
-								//child.receiveShadow = true;
+								child.castShadow = true;
+								child.receiveShadow = true;
 							}
 						}
 					);
@@ -758,8 +764,8 @@ var objLoading = function(){
 									
 								);
 								//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
-								//child.castShadow = true;
-								//child.receiveShadow = true;
+								child.castShadow = true;
+								child.receiveShadow = true;
 							}
 						}
 					);
@@ -810,8 +816,8 @@ var objLoading = function(){
 									
 								);
 								//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
-								//child.castShadow = true;
-								//child.receiveShadow = true;
+								child.castShadow = true;
+								child.receiveShadow = true;
 							}
 						}
 					);
@@ -918,6 +924,8 @@ var objLoading = function(){
 									}
 										
 									);
+									child.castShadow = true;
+									child.receiveShadow = true;
 									//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 									//child.castShadow = true;
 									//child.receiveShadow = true;
@@ -970,6 +978,8 @@ var objLoading = function(){
 									}
 										
 									);
+									child.castShadow = true;
+									child.receiveShadow = true;
 									//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 									//child.castShadow = true;
 									//child.receiveShadow = true;
@@ -1022,6 +1032,8 @@ var objLoading = function(){
 									}
 										
 									);
+									child.castShadow = true;
+									child.receiveShadow = true;
 									//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 									//child.castShadow = true;
 									//child.receiveShadow = true;
@@ -1174,7 +1186,6 @@ var objLoading = function(){
 						child.material = new THREE.MeshLambertMaterial({
 						map: new THREE.TextureLoader().load("assets/Poste/poste.png")}
 					);
-					child.castShadow = true;
 					child.receiveShadow = true;
 				}
 			}
@@ -1213,7 +1224,6 @@ var objLoading = function(){
 						child.material = new THREE.MeshLambertMaterial({
 						map: new THREE.TextureLoader().load("assets/Poste/poste.png")}
 					);
-					child.castShadow = true;
 					child.receiveShadow = true;
 				}
 			}
@@ -1250,7 +1260,6 @@ var objLoading = function(){
 						child.material = new THREE.MeshLambertMaterial({
 						map: new THREE.TextureLoader().load("assets/Poste/poste.png")}
 					);
-					child.castShadow = true;
 					child.receiveShadow = true;
 				}
 			}
@@ -1288,7 +1297,6 @@ var objLoading = function(){
 						child.material = new THREE.MeshLambertMaterial({
 						map: new THREE.TextureLoader().load("assets/Poste/poste.png")}
 					);
-					child.castShadow = true;
 					child.receiveShadow = true;
 				}
 			}
@@ -1334,19 +1342,42 @@ var ambientLightOn = function (){
 	scene.add(lights['ambient']);
 }
 
-var pointLightOn = function (){
-	let point = new THREE.PointLight(0xfffab8, 50, 20);
-	lights['point'] = point;
-	point.castShadow = true;
-	point.position.x = 5;
-	point.position.y = 10.5;
-	point.position.z = 0;
-	scene.add(lights['point']);
+var directionalLightOn = function () {
+	let light = new THREE.DirectionalLight(0xffffff,1);
+	light.castShadow = true;
+	light.shadow.mapSize.width = 4096;
+    light.shadow.mapSize.height = 4096;
+    light.shadow.camera.left = 1000;
+    light.shadow.camera.bottom = 1000;
+    light.shadow.camera.right = -1000
+    light.shadow.camera.top = -1000;
 
+	light.position.y = 200;
+	light.position.x = 100;
+	light.target = ground;
+
+
+	scene.add(light);
+	scene.add(light.target)
+
+	lights['sol'] = light;
+}
+
+var pointLightOn = function (){
+	let point1 = new THREE.PointLight(0xfffab8, 10, 60);
+
+	lights['point1'] = point1;
+	point1.castShadow = true;
+	point1.position.x = -10;
+	point1.position.y = 10.5;
+	point1.position.z = -85;
+	scene.add(lights['point1']);
 }
 
 var godSaysLightsOn = function (){
 	ambientLightOn();
+	directionalLightOn();
+	pointLightOn();
 }
 
 
@@ -1379,15 +1410,7 @@ var init = function (){
 		const gui = new dat.GUI();
 
 		parametrosGUI = {
-			scalarPuppet: 1,
-			positionX: 0,
-			positionY: -6,
-			positionZ: 0,
-			ambientLight: 0.1,
-			sunLight: 1,
-
-			skyColor : "#000000",
-			groundColor: "#006400",
+			ambientLight: 0,
 		};
 
 		let intensidadeLuz = gui.add(parametrosGUI, 'ambientLight').min(0).max(2).step(0.1).name("Fases do dia");
@@ -1395,26 +1418,35 @@ var init = function (){
 				lights['ambient'].intensity = parametro;
 				if(parametro<= 0.3){
 					scene.background= new THREE.Color("#000000");
+					lights['sol'].intensity = 0.3;
 				}else if(parametro>0.3 && parametro<= 0.4){
 					scene.background= new THREE.Color("#2f2538");
+					lights['sol'].intensity = 0.3;
 				}else if(parametro>0.4 && parametro<= 0.5){
 					scene.background= new THREE.Color("#382537");
+					lights['sol'].intensity = 0.4;
 				}else if(parametro>0.5 && parametro<= 0.6){
 					scene.background= new THREE.Color("#382526");
+					lights['sol'].intensity = 0.5;
 				}else if(parametro>0.6 && parametro<= 0.7){
-					scene.background= new THREE.Color("#7d5146");
+					scene.background= new THREE.Color("#b87477");
+					lights['sol'].intensity = 0.6;
 				}else if(parametro>0.7 && parametro<= 0.8){
-					scene.background= new THREE.Color("#7d5b46");
+					scene.background= new THREE.Color("#fad098");
+					lights['sol'].intensity = 0.7;
 				}else if(parametro>0.8 && parametro<= 0.9){
-					scene.background= new THREE.Color("#7775eb");
+					scene.background= new THREE.Color("#feffd1");
 				}else if(parametro>0.9 && parametro<= 1){
-					scene.background= new THREE.Color("#93b0e6");
+					scene.background= new THREE.Color("#95b7f5");
 				}else if(parametro>1 && parametro<= 1.1){
-					scene.background= new THREE.Color("#93c5e6");
+					scene.background= new THREE.Color("#93cde6");
 				}else if(parametro>1.1 && parametro<= 1.2){
-					scene.background= new THREE.Color("#93d4e6");
+					scene.background= new THREE.Color("#98e0eb");
 				}else if(parametro> 1.2){
-					scene.background= new THREE.Color("#93d4e6");
+					scene.background= new THREE.Color("#98e0eb");
+				}
+				if(parametro > 0.8){
+					lights['sol'].intensity = 1;
 				}
 			}
 		);
