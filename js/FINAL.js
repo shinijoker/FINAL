@@ -1085,8 +1085,8 @@ var objLoading = function(){
 		 obj.scale.x = 0.02;
 		
 		obj.position.y = 4;
-		obj.position.x = 10;
-		obj.position.z = -10;
+		obj.position.x = -10;
+		obj.position.z = -85;
 			
 		scene.add(obj);
 		console.log("Carregou Poste1");
@@ -1124,8 +1124,8 @@ var objLoading = function(){
 		 obj.scale.x = 0.02;
 		
 		obj.position.y = 4;
-		obj.position.x = 10;
-		obj.position.z = 0;
+		obj.position.x = 20;
+		obj.position.z = -85;
 			
 		scene.add(obj);
 		console.log("Carregou Poste2");
@@ -1162,7 +1162,7 @@ var objLoading = function(){
 		
 		obj.position.y = 4;
 		obj.position.x = -10;
-		obj.position.z = -10;
+		obj.position.z = -110;
 			
 		scene.add(obj);
 		console.log("Carregou Poste3");
@@ -1199,8 +1199,8 @@ var objLoading = function(){
 		obj.scale.x = 0.02;
 		
 		obj.position.y = 4;
-		obj.position.x = 10;
-		obj.position.z = 10;
+		obj.position.x = 20;
+		obj.position.z = -110;
 			
 		scene.add(obj);
 		console.log("Carregou Poste4");
