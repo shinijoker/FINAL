@@ -1681,9 +1681,7 @@ var init = function (){
 	
 	let materialGround = new THREE.MeshLambertMaterial({map: groundTexture});
 	materialGround.normalMap = textureLoad.load("assets/texturas/PavingStones/PavingStonesNormal.jpg"); //busca a normal, que da noção básica de profundidade
-	materialGround.displacementMap = textureLoad.load("assets/texturas/PavingStones/PavingStonesDisplacement.jpg")
-	
-	
+	materialGround.displacementMap = textureLoad.load("assets/texturas/PavingStones/PavingStonesDisplacement.jpg")	
 	ground = new THREE.Mesh(
 		new THREE.PlaneBufferGeometry(1000,1000),
 		materialGround
@@ -1700,14 +1698,8 @@ var init = function (){
 
 };
 
-
-
-
 var animation = function (){
 	requestAnimationFrame(animation); 
-
-
-	
 
 	renderer.render(scene, camera); //tira uma foto do estado e mostra na tela
 }
