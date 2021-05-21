@@ -38,6 +38,9 @@ var objLoading = function(){
 	loader = new THREE.OBJLoader();
 	
 
+
+
+
 	//grama 1 direita//
 	loader.load(
 		'assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_iterations-2.obj',//arquivo que vamos buscar
@@ -1171,7 +1174,7 @@ var init = function (){
 	camera.position.x = 0;
 	camera.position.y = 1.7;
 	
-	//createGui();	
+	createGui();	
 
 	objLoading();
 
