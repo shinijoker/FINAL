@@ -39,8 +39,7 @@ var objLoading = function(){
 
 //////////////////////////////////////////////////////////
 
-
-	
+let loaderFBX = new THREE.FBXLoader();
 
 	//grama 1 direita//
 	loader.load(
@@ -951,57 +950,92 @@ var objLoading = function(){
 			console.log("A ARVORE DO MICO MANO: " + error);
 		} //metodo deu merda
 		);
+    ///////////////// Aranha //////////////////////////////////
+	loaderFBX.load(
+		'assets/spider/Spider.fbx',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['spider'] = obj;
 
+			let animation;
+			mixer = new THREE.AnimationMixer(obj);
+			animation = mixer.clipAction(obj.animations[1]);
+			animationActions.push(animation);
 
-	// pinguim //	
+			animation = mixer.clipAction(obj.animations[2]);
+			animationActions.push(animation);
 
-			loader.load(
-				'assets/staticAnimals/Penguin/PenguinBaseMesh.obj',
-				function(obj){
-					elementos['peng'] = obj;
+			animation = mixer.clipAction(obj.animations[3]);
+			animationActions.push(animation);
 
-					obj.traverse( function (child){
-						if (child instanceof THREE.Mesh){
-							child.material = new THREE.MeshLambertMaterial({
-								map: new THREE.TextureLoader().load("assets/staticAnimals/Penguin/PenguinDiffuseColor.png")
-								
-								
-							}
-								
-							);
-							
-						}
+			animation = mixer.clipAction(obj.animations[4]);
+			animationActions.push(animation);
+
+			animation = mixer.clipAction(obj.animations[5]);
+			animationActions.push(animation);
+
+			animation = mixer.clipAction(obj.animations[6]);
+			animationActions.push(animation);
+
+			animation = mixer.clipAction(obj.animations[7]);
+			animationActions.push(animation);
+
+			animation = mixer.clipAction(obj.animations[8]);
+			animationActions.push(animation);
+
+			animation = mixer.clipAction(obj.animations[9]);
+			animationActions.push(animation);
+
+			animation = mixer.clipAction(obj.animations[10]);
+			animationActions.push(animation);
+
+			animation = mixer.clipAction(obj.animations[11]);
+			animationActions.push(animation);
+
+			animation = mixer.clipAction(obj.animations[12]);
+			animationActions.push(animation);
+
+			animation = mixer.clipAction(obj.animations[13]);
+			animationActions.push(animation);
+
+			animation = mixer.clipAction(obj.animations[14]);
+			animationActions.push(animation);
+
+			animation = mixer.clipAction(obj.animations[0]);
+			animationActions.push(animation);
+
+			activeAction = animation;
+
+			//adiciona as animações a GUI
+
+			
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material.map = new THREE.TextureLoader().load("assets/spider/textures/spider.jpg");
+						child.material.shininess = 0;
+						child.castShadow = true;
+						child.receiveShadow = true;
 					}
-				);
-							obj.scale.y = 2;
-							obj.scale.z = 2;
-							obj.scale.x = 2;
-			
-							obj.position.y = -6.7;
-							obj.position.x = -50;
-							obj.position.z = -50;
-				
-							obj.rotation.x=0;
-							obj.rotation.y=0;
-							
-				
-							scene.add(obj);
-				
-							
-							
-							//staticbounding.push(objBox);
-							console.log("Carregou Ovelha");
-				
-						},//Oque acontece quando terminar!
-						function(andamento){
-							console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-						},//O que acontece enquanto esta carregando
-						function(error){
-							console.log(" Deu merda!: "+ error);
-						}//o que acontece se der merda.
-											
+				}
 			);
+
+			 obj.scale.y = 0.2;
+			 obj.scale.z = 0.2;
+			 obj.scale.x = 0.2;
+
+			obj.position.y = -6.7;
+			obj.position.x = -50;
+			obj.position.z = -50;
+
+			obj.position.y = -7.5;
 			
+			//obj.rotation.x-=1.35;
+
+			scene.add(obj);
+			console.log("Carregou aranha");
+			loadFinished = true;
+
+		});
 
 	// mario //
 
@@ -1102,9 +1136,7 @@ var objLoading = function(){
 		//////////////////Postes////////////////////////////////	
 
 
-		///////////////////////Poste 1/////////////////////////
-
-	let loaderFBX = new THREE.FBXLoader();
+	///////////////////////Poste 1/////////////////////////
 
 	loaderFBX.load(
 		'assets/Poste/Poste.fbx',//arquivo que vamos buscar
@@ -1492,11 +1524,47 @@ var init = function (){
 
 	scene.fog = new THREE.Fog(0xcce0ff, 100, 500);
 
+	document.addEventListener('keydown', apertouButao);
 };
+
+<<<<<<< Updated upstream
+var animation = function (){
+	requestAnimationFrame(animation); 
+
+=======
+var key_space = false;
+
+var apertouButao =  function(e){
+	console.log(e.keyCode);
+	if (e.keyCode == 32){ // space
+		setAction(animationActions[10]);
+		key_space = true;
+	}
+}
+
+var soltouBotao = function(e){
+	console.log(e.keyCode);
+	if (e.keyCode == 32){
+		key_space = false;
+	}
+}
+
 
 var animation = function (){
 	requestAnimationFrame(animation); 
 
+	let delta = clock.getDelta();
+
+	if (loadFinished){
+		console.log("Entrou");
+		mixer.update(delta);
+	}else{
+		console.log("Não!!!");
+	}
+	
+
+
+>>>>>>> Stashed changes
 	renderer.render(scene, camera); //tira uma foto do estado e mostra na tela
 }
 
