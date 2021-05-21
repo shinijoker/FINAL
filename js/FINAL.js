@@ -39,11 +39,11 @@ var objLoading = function(){
 	
 
 
-
+	
 
 	//grama 1 direita//
 	loader.load(
-		'assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_iterations-2.obj',//arquivo que vamos buscar
+		'assets/chao/RetangularGrass/RetangularGrass.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['parede1'] = obj;
@@ -51,7 +51,7 @@ var objLoading = function(){
 			obj.traverse( function (child){
 				if (child instanceof THREE.Mesh){
 					child.material = new THREE.MeshLambertMaterial({
-						map: new THREE.TextureLoader().load("assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_Diffuse.jpg")}
+						map: new THREE.TextureLoader().load("assets/chao/RetangularGrass/RetangularGrass.jpg")}
 						);
 					
 				}
@@ -82,7 +82,7 @@ var objLoading = function(){
 
 	//grama 2 direita//
 	loader.load(
-		'assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_iterations-2.obj',//arquivo que vamos buscar
+		'assets/chao/retangularGrass/retangularGrass.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['parede1'] = obj;
@@ -90,7 +90,7 @@ var objLoading = function(){
 			obj.traverse( function (child){
 				if (child instanceof THREE.Mesh){
 					child.material = new THREE.MeshLambertMaterial({
-						map: new THREE.TextureLoader().load("assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_Diffuse.jpg")}
+						map: new THREE.TextureLoader().load("assets/chao/retangularGrass/retangularGrass.jpg")}
 					);
 					
 				}
@@ -119,10 +119,10 @@ var objLoading = function(){
 		}//o que acontece se der merda.
 	);
 
-	
+
 	//grama 1 esquerda//
 	loader.load(
-		'assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_iterations-2.obj',//arquivo que vamos buscar
+		'assets/chao/retangularGrass/retangularGrass.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['parede1'] = obj;
@@ -130,7 +130,7 @@ var objLoading = function(){
 			obj.traverse( function (child){
 				if (child instanceof THREE.Mesh){
 					child.material = new THREE.MeshLambertMaterial({
-						map: new THREE.TextureLoader().load("assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_Diffuse.jpg")}
+						map: new THREE.TextureLoader().load("assets/chao/retangularGrass/retangularGrass.jpg")}
 					);
 					
 				}
@@ -162,7 +162,7 @@ var objLoading = function(){
 
 	//grama 2 esquerda//
 	loader.load(
-		'assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_iterations-2.obj',//arquivo que vamos buscar
+		'assets/chao/retangularGrass/retangularGrass.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['parede1'] = obj;
@@ -170,7 +170,7 @@ var objLoading = function(){
 			obj.traverse( function (child){
 				if (child instanceof THREE.Mesh){
 					child.material = new THREE.MeshLambertMaterial({
-						map: new THREE.TextureLoader().load("assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_Diffuse.jpg")}
+						map: new THREE.TextureLoader().load("assets/chao/retangularGrass/retangularGrass.jpg")}
 					);
 					
 				}
