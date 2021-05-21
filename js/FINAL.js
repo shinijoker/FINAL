@@ -36,7 +36,9 @@ var clock = new THREE.Clock();
 
 var objLoading = function(){
 	loader = new THREE.OBJLoader();
-	//grama1direita
+	
+
+	//grama 1 direita//
 	loader.load(
 		'assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_iterations-2.obj',//arquivo que vamos buscar
 		function(obj){
@@ -73,7 +75,9 @@ var objLoading = function(){
 			console.log(" Deu merda!: "+ error);
 		}//o que acontece se der merda.
 	);
-	//grama2direita
+
+
+	//grama 2 direita//
 	loader.load(
 		'assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_iterations-2.obj',//arquivo que vamos buscar
 		function(obj){
@@ -111,7 +115,9 @@ var objLoading = function(){
 			console.log(" Deu merda!: "+ error);
 		}//o que acontece se der merda.
 	);
-	//grama1esquerda
+
+	
+	//grama 1 esquerda//
 	loader.load(
 		'assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_iterations-2.obj',//arquivo que vamos buscar
 		function(obj){
@@ -149,8 +155,9 @@ var objLoading = function(){
 			console.log(" Deu merda!: "+ error);
 		}//o que acontece se der merda.
 	);
-	loader = new THREE.OBJLoader();
-	//grama2esquerda
+
+
+	//grama 2 esquerda//
 	loader.load(
 		'assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_iterations-2.obj',//arquivo que vamos buscar
 		function(obj){
@@ -188,7 +195,878 @@ var objLoading = function(){
 			console.log(" Deu merda!: "+ error);
 		}//o que acontece se der merda.
 	);
+
+
+
+	//============ CERCA 1D ============//
+
+
+	//cerca1dsul
+	loader.load(
+	'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['ovelha'] = obj;
+			
+			
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material = new THREE.MeshLambertMaterial({
+							map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+							//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+							
+							
+						}
+							
+						);
+						//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+						child.castShadow = true;
+						child.receiveShadow = true;
+					}
+				}
+			);
+
+			 obj.scale.y = 2;
+			 obj.scale.z = 2;
+			 obj.scale.x = 4;
+
+			obj.position.y = -8;
+			obj.position.x = 51;
+			obj.position.z = -20;
+
+			//obj.rotation.x-=1.35;
+			scene.add(new THREE.BoxHelper(obj, 0xffff00));
+
+			scene.add(obj);
+
+			obj.children[0].geometry.computeBoundingBox();
+			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+			staticBounding.push(objBox);
+			console.log("Carregou Ovelha");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	
+	//cerca1dnorte
+	loader.load(
+		'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+			function(obj){
+				//atribui a cena, colore, reposiciona, rotaciona
+				elementos['ovelha'] = obj;
+				
+				
+				obj.traverse( function (child){
+						if (child instanceof THREE.Mesh){
+							child.material = new THREE.MeshLambertMaterial({
+								map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+								//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+								
+								
+							}
+								
+							);
+							//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+							//child.castShadow = true;
+							//child.receiveShadow = true;
+						}
+					}
+				);
+	
+				 obj.scale.y = 2;
+				 obj.scale.z = 2;
+				 obj.scale.x = 4;
+	
+				obj.position.y = -8;
+				obj.position.x = 51;
+				obj.position.z = -80.5;
+	
+				//obj.rotation.x-=1.35;
+				scene.add(new THREE.BoxHelper(obj, 0xffff00));
+	
+				scene.add(obj);
+	
+				obj.children[0].geometry.computeBoundingBox();
+				let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+				staticBounding.push(objBox);
+				console.log("Carregou Ovelha");
+	
+			},//Oque acontece quando terminar!
+			function(andamento){
+				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+			},//O que acontece enquanto esta carregando
+			function(error){
+				console.log(" Deu merda!: "+ error);
+			}//o que acontece se der merda.
+		);
+
+		//cerca1doeste
+	loader.load(
+		'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+			function(obj){
+				//atribui a cena, colore, reposiciona, rotaciona
+				elementos['ovelha'] = obj;
+				
+				
+				obj.traverse( function (child){
+						if (child instanceof THREE.Mesh){
+							child.material = new THREE.MeshLambertMaterial({
+								map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+								//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+								
+								
+							}
+								
+							);
+							//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+							//child.castShadow = true;
+							//child.receiveShadow = true;
+						}
+					}
+				);
+	
+				 obj.scale.y = 2;
+				 obj.scale.z = 2;
+				 obj.scale.x = 4;
+	
+				obj.position.y = -8;
+				obj.position.x = 19.9;
+				obj.position.z = -50;
+	
+				obj.rotation.y-=4.7125;
+				scene.add(new THREE.BoxHelper(obj, 0xffff00));
+	
+				scene.add(obj);
+	
+				obj.children[0].geometry.computeBoundingBox();
+				let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+				staticBounding.push(objBox);
+				console.log("Carregou Ovelha");
+	
+			},//Oque acontece quando terminar!
+			function(andamento){
+				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+			},//O que acontece enquanto esta carregando
+			function(error){
+				console.log(" Deu merda!: "+ error);
+			}//o que acontece se der merda.
+		);
+		
+		//cerca1dleste
+	loader.load(
+		'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+			function(obj){
+				//atribui a cena, colore, reposiciona, rotaciona
+				elementos['ovelha'] = obj;
+				
+				
+				obj.traverse( function (child){
+						if (child instanceof THREE.Mesh){
+							child.material = new THREE.MeshLambertMaterial({
+								map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+								//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+								
+								
+							}
+								
+							);
+							//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+							//child.castShadow = true;
+							//child.receiveShadow = true;
+						}
+					}
+				);
+	
+				 obj.scale.y = 2;
+				 obj.scale.z = 2;
+				 obj.scale.x = 4;
+	
+				obj.position.y = -8;
+				obj.position.x = 79.9;
+				obj.position.z = -50;
+	
+				obj.rotation.y-=4.7125;
+				scene.add(new THREE.BoxHelper(obj, 0xffff00));
+	
+				scene.add(obj);
+	
+				obj.children[0].geometry.computeBoundingBox();
+				let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+				staticBounding.push(objBox);
+				console.log("Carregou Ovelha");
+	
+			},//Oque acontece quando terminar!
+			function(andamento){
+				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+			},//O que acontece enquanto esta carregando
+			function(error){
+				console.log(" Deu merda!: "+ error);
+			}//o que acontece se der merda.
+	);
+	//===============================//
+
+
+	//============ CERCA 2D ============//
+
+
+	//cerca2dsul
+	loader.load(
+		'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+			function(obj){
+				//atribui a cena, colore, reposiciona, rotaciona
+				elementos['ovelha'] = obj;
+				
+				
+				obj.traverse( function (child){
+						if (child instanceof THREE.Mesh){
+							child.material = new THREE.MeshLambertMaterial({
+								map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+								//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+								
+								
+							}
+								
+							);
+							//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+							child.castShadow = true;
+							child.receiveShadow = true;
+						}
+					}
+				);
+	
+				 obj.scale.y = 2;
+				 obj.scale.z = 2;
+				 obj.scale.x = 4;
+	
+				obj.position.y = -8;
+				obj.position.x = 51;
+				obj.position.z = -120;
+	
+				//obj.rotation.x-=1.35;
+				scene.add(new THREE.BoxHelper(obj, 0xffff00));
+	
+				scene.add(obj);
+	
+				obj.children[0].geometry.computeBoundingBox();
+				let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+				staticBounding.push(objBox);
+				console.log("Carregou Ovelha");
+	
+			},//Oque acontece quando terminar!
+			function(andamento){
+				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+			},//O que acontece enquanto esta carregando
+			function(error){
+				console.log(" Deu merda!: "+ error);
+			}//o que acontece se der merda.
+		);
+		
+		//cerca2dnorte
+		loader.load(
+			'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+				function(obj){
+					//atribui a cena, colore, reposiciona, rotaciona
+					elementos['ovelha'] = obj;
+					
+					
+					obj.traverse( function (child){
+							if (child instanceof THREE.Mesh){
+								child.material = new THREE.MeshLambertMaterial({
+									map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+									//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+									
+									
+								}
+									
+								);
+								//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+								//child.castShadow = true;
+								//child.receiveShadow = true;
+							}
+						}
+					);
+		
+					 obj.scale.y = 2;
+					 obj.scale.z = 2;
+					 obj.scale.x = 4;
+		
+					obj.position.y = -8;
+					obj.position.x = 51;
+					obj.position.z = -180.5;
+		
+					//obj.rotation.x-=1.35;
+					scene.add(new THREE.BoxHelper(obj, 0xffff00));
+		
+					scene.add(obj);
+		
+					obj.children[0].geometry.computeBoundingBox();
+					let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+					staticBounding.push(objBox);
+					console.log("Carregou Ovelha");
+		
+				},//Oque acontece quando terminar!
+				function(andamento){
+					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+				},//O que acontece enquanto esta carregando
+				function(error){
+					console.log(" Deu merda!: "+ error);
+				}//o que acontece se der merda.
+			);
+	
+			//cerca2doeste
+		loader.load(
+			'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+				function(obj){
+					//atribui a cena, colore, reposiciona, rotaciona
+					elementos['ovelha'] = obj;
+					
+					
+					obj.traverse( function (child){
+							if (child instanceof THREE.Mesh){
+								child.material = new THREE.MeshLambertMaterial({
+									map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+									//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+									
+									
+								}
+									
+								);
+								//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+								//child.castShadow = true;
+								//child.receiveShadow = true;
+							}
+						}
+					);
+		
+					 obj.scale.y = 2;
+					 obj.scale.z = 2;
+					 obj.scale.x = 4;
+		
+					obj.position.y = -8;
+					obj.position.x = 19.9;
+					obj.position.z = -150;
+		
+					obj.rotation.y-=4.7125;
+					scene.add(new THREE.BoxHelper(obj, 0xffff00));
+		
+					scene.add(obj);
+		
+					obj.children[0].geometry.computeBoundingBox();
+					let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+					staticBounding.push(objBox);
+					console.log("Carregou Ovelha");
+		
+				},//Oque acontece quando terminar!
+				function(andamento){
+					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+				},//O que acontece enquanto esta carregando
+				function(error){
+					console.log(" Deu merda!: "+ error);
+				}//o que acontece se der merda.
+			);
+			
+			//cerca2dleste
+		loader.load(
+			'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+				function(obj){
+					//atribui a cena, colore, reposiciona, rotaciona
+					elementos['ovelha'] = obj;
+					
+					
+					obj.traverse( function (child){
+							if (child instanceof THREE.Mesh){
+								child.material = new THREE.MeshLambertMaterial({
+									map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+									//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+									
+									
+								}
+									
+								);
+								//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+								//child.castShadow = true;
+								//child.receiveShadow = true;
+							}
+						}
+					);
+		
+					 obj.scale.y = 2;
+					 obj.scale.z = 2;
+					 obj.scale.x = 4;
+		
+					obj.position.y = -8;
+					obj.position.x = 79.9;
+					obj.position.z = -150;
+		
+					obj.rotation.y-=4.7125;
+					scene.add(new THREE.BoxHelper(obj, 0xffff00));
+		
+					scene.add(obj);
+		
+					obj.children[0].geometry.computeBoundingBox();
+					let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+					staticBounding.push(objBox);
+					console.log("Carregou Ovelha");
+		
+				},//Oque acontece quando terminar!
+				function(andamento){
+					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+				},//O que acontece enquanto esta carregando
+				function(error){
+					console.log(" Deu merda!: "+ error);
+				}//o que acontece se der merda.
+		);
+		//===============================//			
+
+
+	//============ CERCA 1E ============//
+
+
+	//cerca1esul
+	loader.load(
+		'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+			function(obj){
+				//atribui a cena, colore, reposiciona, rotaciona
+				elementos['ovelha'] = obj;
+				
+				
+				obj.traverse( function (child){
+						if (child instanceof THREE.Mesh){
+							child.material = new THREE.MeshLambertMaterial({
+								map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+								//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+								
+								
+							}
+								
+							);
+							//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+							child.castShadow = true;
+							child.receiveShadow = true;
+						}
+					}
+				);
+	
+				 obj.scale.y = 2;
+				 obj.scale.z = 2;
+				 obj.scale.x = 4;
+	
+				obj.position.y = -8;
+				obj.position.x = -51;
+				obj.position.z = -20;
+	
+				//obj.rotation.x-=1.35;
+				scene.add(new THREE.BoxHelper(obj, 0xffff00));
+	
+				scene.add(obj);
+	
+				obj.children[0].geometry.computeBoundingBox();
+				let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+				staticBounding.push(objBox);
+				console.log("Carregou Ovelha");
+	
+			},//Oque acontece quando terminar!
+			function(andamento){
+				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+			},//O que acontece enquanto esta carregando
+			function(error){
+				console.log(" Deu merda!: "+ error);
+			}//o que acontece se der merda.
+		);
+		
+		//cerca1enorte
+		loader.load(
+			'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+				function(obj){
+					//atribui a cena, colore, reposiciona, rotaciona
+					elementos['ovelha'] = obj;
+					
+					
+					obj.traverse( function (child){
+							if (child instanceof THREE.Mesh){
+								child.material = new THREE.MeshLambertMaterial({
+									map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+									//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+									
+									
+								}
+									
+								);
+								//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+								//child.castShadow = true;
+								//child.receiveShadow = true;
+							}
+						}
+					);
+		
+					 obj.scale.y = 2;
+					 obj.scale.z = 2;
+					 obj.scale.x = 4;
+		
+					obj.position.y = -8;
+					obj.position.x = -51;
+					obj.position.z = -80.5;
+		
+					//obj.rotation.x-=1.35;
+					scene.add(new THREE.BoxHelper(obj, 0xffff00));
+		
+					scene.add(obj);
+		
+					obj.children[0].geometry.computeBoundingBox();
+					let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+					staticBounding.push(objBox);
+					console.log("Carregou Ovelha");
+		
+				},//Oque acontece quando terminar!
+				function(andamento){
+					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+				},//O que acontece enquanto esta carregando
+				function(error){
+					console.log(" Deu merda!: "+ error);
+				}//o que acontece se der merda.
+			);
+	
+			//cerca1eoeste
+		loader.load(
+			'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+				function(obj){
+					//atribui a cena, colore, reposiciona, rotaciona
+					elementos['ovelha'] = obj;
+					
+					
+					obj.traverse( function (child){
+							if (child instanceof THREE.Mesh){
+								child.material = new THREE.MeshLambertMaterial({
+									map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+									//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+									
+									
+								}
+									
+								);
+								//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+								//child.castShadow = true;
+								//child.receiveShadow = true;
+							}
+						}
+					);
+		
+					 obj.scale.y = 2;
+					 obj.scale.z = 2;
+					 obj.scale.x = 4;
+		
+					obj.position.y = -8;
+					obj.position.x = -19.9;
+					obj.position.z = -50;
+		
+					obj.rotation.y-=4.7125;
+					scene.add(new THREE.BoxHelper(obj, 0xffff00));
+		
+					scene.add(obj);
+		
+					obj.children[0].geometry.computeBoundingBox();
+					let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+					staticBounding.push(objBox);
+					console.log("Carregou Ovelha");
+		
+				},//Oque acontece quando terminar!
+				function(andamento){
+					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+				},//O que acontece enquanto esta carregando
+				function(error){
+					console.log(" Deu merda!: "+ error);
+				}//o que acontece se der merda.
+			);
+			
+			//cerca1eleste
+		loader.load(
+			'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+				function(obj){
+					//atribui a cena, colore, reposiciona, rotaciona
+					elementos['ovelha'] = obj;
+					
+					
+					obj.traverse( function (child){
+							if (child instanceof THREE.Mesh){
+								child.material = new THREE.MeshLambertMaterial({
+									map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+									//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+									
+									
+								}
+									
+								);
+								//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+								//child.castShadow = true;
+								//child.receiveShadow = true;
+							}
+						}
+					);
+		
+					 obj.scale.y = 2;
+					 obj.scale.z = 2;
+					 obj.scale.x = 4;
+		
+					obj.position.y = -8;
+					obj.position.x = -79.9;
+					obj.position.z = -50;
+		
+					obj.rotation.y-=4.7125;
+					scene.add(new THREE.BoxHelper(obj, 0xffff00));
+		
+					scene.add(obj);
+		
+					obj.children[0].geometry.computeBoundingBox();
+					let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+					staticBounding.push(objBox);
+					console.log("Carregou Ovelha");
+		
+				},//Oque acontece quando terminar!
+				function(andamento){
+					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+				},//O que acontece enquanto esta carregando
+				function(error){
+					console.log(" Deu merda!: "+ error);
+				}//o que acontece se der merda.
+		);
+		//===============================//
+	
+	
+		//============ CERCA 2E ============//
+	
+	
+		//cerca2esul
+		loader.load(
+			'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+				function(obj){
+					//atribui a cena, colore, reposiciona, rotaciona
+					elementos['ovelha'] = obj;
+					
+					
+					obj.traverse( function (child){
+							if (child instanceof THREE.Mesh){
+								child.material = new THREE.MeshLambertMaterial({
+									map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+									//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+									
+									
+								}
+									
+								);
+								//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+								child.castShadow = true;
+								child.receiveShadow = true;
+							}
+						}
+					);
+		
+					 obj.scale.y = 2;
+					 obj.scale.z = 2;
+					 obj.scale.x = 4;
+		
+					obj.position.y = -8;
+					obj.position.x = -51;
+					obj.position.z = -120;
+		
+					//obj.rotation.x-=1.35;
+					scene.add(new THREE.BoxHelper(obj, 0xffff00));
+		
+					scene.add(obj);
+		
+					obj.children[0].geometry.computeBoundingBox();
+					let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+					staticBounding.push(objBox);
+					console.log("Carregou Ovelha");
+		
+				},//Oque acontece quando terminar!
+				function(andamento){
+					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+				},//O que acontece enquanto esta carregando
+				function(error){
+					console.log(" Deu merda!: "+ error);
+				}//o que acontece se der merda.
+			);
+			
+			//cerca2enorte
+			loader.load(
+				'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+					function(obj){
+						//atribui a cena, colore, reposiciona, rotaciona
+						elementos['ovelha'] = obj;
+						
+						
+						obj.traverse( function (child){
+								if (child instanceof THREE.Mesh){
+									child.material = new THREE.MeshLambertMaterial({
+										map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+										//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+										
+										
+									}
+										
+									);
+									//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+									//child.castShadow = true;
+									//child.receiveShadow = true;
+								}
+							}
+						);
+			
+						 obj.scale.y = 2;
+						 obj.scale.z = 2;
+						 obj.scale.x = 4;
+			
+						obj.position.y = -8;
+						obj.position.x = -51;
+						obj.position.z = -180.5;
+			
+						//obj.rotation.x-=1.35;
+						scene.add(new THREE.BoxHelper(obj, 0xffff00));
+			
+						scene.add(obj);
+			
+						obj.children[0].geometry.computeBoundingBox();
+						let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+						staticBounding.push(objBox);
+						console.log("Carregou Ovelha");
+			
+					},//Oque acontece quando terminar!
+					function(andamento){
+						console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+					},//O que acontece enquanto esta carregando
+					function(error){
+						console.log(" Deu merda!: "+ error);
+					}//o que acontece se der merda.
+				);
+		
+				//cerca2eoeste
+			loader.load(
+				'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+					function(obj){
+						//atribui a cena, colore, reposiciona, rotaciona
+						elementos['ovelha'] = obj;
+						
+						
+						obj.traverse( function (child){
+								if (child instanceof THREE.Mesh){
+									child.material = new THREE.MeshLambertMaterial({
+										map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+										//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+										
+										
+									}
+										
+									);
+									//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+									//child.castShadow = true;
+									//child.receiveShadow = true;
+								}
+							}
+						);
+			
+						 obj.scale.y = 2;
+						 obj.scale.z = 2;
+						 obj.scale.x = 4;
+			
+						obj.position.y = -8;
+						obj.position.x = -19.9;
+						obj.position.z = -150;
+			
+						obj.rotation.y-=4.7125;
+						scene.add(new THREE.BoxHelper(obj, 0xffff00));
+			
+						scene.add(obj);
+			
+						obj.children[0].geometry.computeBoundingBox();
+						let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+						staticBounding.push(objBox);
+						console.log("Carregou Ovelha");
+			
+					},//Oque acontece quando terminar!
+					function(andamento){
+						console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+					},//O que acontece enquanto esta carregando
+					function(error){
+						console.log(" Deu merda!: "+ error);
+					}//o que acontece se der merda.
+				);
+				
+				//cerca2eleste
+			loader.load(
+				'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+					function(obj){
+						//atribui a cena, colore, reposiciona, rotaciona
+						elementos['ovelha'] = obj;
+						
+						
+						obj.traverse( function (child){
+								if (child instanceof THREE.Mesh){
+									child.material = new THREE.MeshLambertMaterial({
+										map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+										//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+										
+										
+									}
+										
+									);
+									//material.alphaMap = new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
+									//child.castShadow = true;
+									//child.receiveShadow = true;
+								}
+							}
+						);
+			
+						 obj.scale.y = 2;
+						 obj.scale.z = 2;
+						 obj.scale.x = 4;
+			
+						obj.position.y = -8;
+						obj.position.x = -79.9;
+						obj.position.z = -150;
+			
+						obj.rotation.y-=4.7125;
+						scene.add(new THREE.BoxHelper(obj, 0xffff00));
+			
+						scene.add(obj);
+			
+						obj.children[0].geometry.computeBoundingBox();
+						let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+						staticBounding.push(objBox);
+						console.log("Carregou Ovelha");
+			
+					},//Oque acontece quando terminar!
+					function(andamento){
+						console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+					},//O que acontece enquanto esta carregando
+					function(error){
+						console.log(" Deu merda!: "+ error);
+					}//o que acontece se der merda.
+			);
+			//===============================//			
+	
+
+
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //troca a ação do nosso modelo
 const setAction = function(toAction) {
     if (toAction != activeAction) {
@@ -293,7 +1171,7 @@ var init = function (){
 	camera.position.x = 0;
 	camera.position.y = 1.7;
 	
-	createGui();	
+	//createGui();	
 
 	objLoading();
 
