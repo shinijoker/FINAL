@@ -71,8 +71,14 @@ let loaderFBX = new THREE.FBXLoader();
 			scene.add(obj);
 			console.log("Carregou!");
 
-		},	
-	)
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
 
 
 	//grama 2 direita//
@@ -106,7 +112,13 @@ let loaderFBX = new THREE.FBXLoader();
 			scene.add(obj);
 			console.log("Carregou!");
 
-		}
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
 	);
 
 
@@ -142,7 +154,13 @@ let loaderFBX = new THREE.FBXLoader();
 			scene.add(obj);
 			console.log("Carregou!");
 
-		}
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
 	);
 
 
@@ -178,7 +196,13 @@ let loaderFBX = new THREE.FBXLoader();
 			scene.add(obj);
 			console.log("Carregou!");
 
-		}
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
 	);
 
 
@@ -191,7 +215,7 @@ let loaderFBX = new THREE.FBXLoader();
 	'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['cerca1ds'] = obj;
+			elementos['ovelha'] = obj;
 			
 			
 			obj.traverse( function (child){
@@ -224,7 +248,18 @@ let loaderFBX = new THREE.FBXLoader();
 
 			scene.add(obj);
 
-		},
+			
+			
+			//staticbounding.push(objBox);
+			console.log("Carregou Ovelha");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
 	);
 	
 	//cerca1dnorte
@@ -232,7 +267,7 @@ let loaderFBX = new THREE.FBXLoader();
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['cerca1dn'] = obj;
+				elementos['ovelha'] = obj;
 				
 				
 				obj.traverse( function (child){
@@ -267,9 +302,16 @@ let loaderFBX = new THREE.FBXLoader();
 	
 				
 				
-				
+				//staticbounding.push(objBox);
+				console.log("Carregou Ovelha");
 	
-			},
+			},//Oque acontece quando terminar!
+			function(andamento){
+				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+			},//O que acontece enquanto esta carregando
+			function(error){
+				console.log(" Deu merda!: "+ error);
+			}//o que acontece se der merda.
 		);
 
 		//cerca1doeste
@@ -277,7 +319,7 @@ let loaderFBX = new THREE.FBXLoader();
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['cerca1do'] = obj;
+				elementos['ovelha'] = obj;
 				
 				
 				obj.traverse( function (child){
@@ -309,7 +351,19 @@ let loaderFBX = new THREE.FBXLoader();
 				
 	
 				scene.add(obj);
-			},
+	
+				
+				
+				//staticbounding.push(objBox);
+				console.log("Carregou Ovelha");
+	
+			},//Oque acontece quando terminar!
+			function(andamento){
+				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+			},//O que acontece enquanto esta carregando
+			function(error){
+				console.log(" Deu merda!: "+ error);
+			}//o que acontece se der merda.
 		);
 		
 		//cerca1dleste
@@ -317,7 +371,7 @@ let loaderFBX = new THREE.FBXLoader();
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['cerca1dl'] = obj;
+				elementos['ovelha'] = obj;
 				
 				
 				obj.traverse( function (child){
@@ -349,7 +403,19 @@ let loaderFBX = new THREE.FBXLoader();
 				
 	
 				scene.add(obj);
-			},
+	
+				
+				
+				//staticbounding.push(objBox);
+				console.log("Carregou Ovelha");
+	
+			},//Oque acontece quando terminar!
+			function(andamento){
+				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+			},//O que acontece enquanto esta carregando
+			function(error){
+				console.log(" Deu merda!: "+ error);
+			}//o que acontece se der merda.
 	);
 	//===============================//
 
@@ -362,7 +428,7 @@ let loaderFBX = new THREE.FBXLoader();
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['cerca2ds'] = obj;
+				elementos['ovelha'] = obj;
 				
 				
 				obj.traverse( function (child){
@@ -397,7 +463,16 @@ let loaderFBX = new THREE.FBXLoader();
 	
 				
 				
-			},
+				//staticbounding.push(objBox);
+				console.log("Carregou Ovelha");
+	
+			},//Oque acontece quando terminar!
+			function(andamento){
+				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+			},//O que acontece enquanto esta carregando
+			function(error){
+				console.log(" Deu merda!: "+ error);
+			}//o que acontece se der merda.
 		);
 		
 		//cerca2dnorte
@@ -405,7 +480,7 @@ let loaderFBX = new THREE.FBXLoader();
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['cerca2dn'] = obj;
+					elementos['ovelha'] = obj;
 					
 					
 					obj.traverse( function (child){
@@ -438,7 +513,18 @@ let loaderFBX = new THREE.FBXLoader();
 		
 					scene.add(obj);
 		
-				},
+					
+					
+					//staticbounding.push(objBox);
+					console.log("Carregou Ovelha");
+		
+				},//Oque acontece quando terminar!
+				function(andamento){
+					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+				},//O que acontece enquanto esta carregando
+				function(error){
+					console.log(" Deu merda!: "+ error);
+				}//o que acontece se der merda.
 			);
 	
 			//cerca2doeste
@@ -446,7 +532,7 @@ let loaderFBX = new THREE.FBXLoader();
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['cerca2d'] = obj;
+					elementos['ovelha'] = obj;
 					
 					
 					obj.traverse( function (child){
@@ -479,7 +565,18 @@ let loaderFBX = new THREE.FBXLoader();
 		
 					scene.add(obj);
 		
-				},
+					
+					
+					//staticbounding.push(objBox);
+					console.log("Carregou Ovelha");
+		
+				},//Oque acontece quando terminar!
+				function(andamento){
+					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+				},//O que acontece enquanto esta carregando
+				function(error){
+					console.log(" Deu merda!: "+ error);
+				}//o que acontece se der merda.
 			);
 			
 			//cerca2dleste
@@ -487,7 +584,7 @@ let loaderFBX = new THREE.FBXLoader();
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['cerca2dl'] = obj;
+					elementos['ovelha'] = obj;
 					
 					
 					obj.traverse( function (child){
@@ -520,7 +617,18 @@ let loaderFBX = new THREE.FBXLoader();
 		
 					scene.add(obj);
 		
-				},
+					
+					
+					//staticbounding.push(objBox);
+					console.log("Carregou Ovelha");
+		
+				},//Oque acontece quando terminar!
+				function(andamento){
+					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+				},//O que acontece enquanto esta carregando
+				function(error){
+					console.log(" Deu merda!: "+ error);
+				}//o que acontece se der merda.
 		);
 		//===============================//			
 
@@ -533,7 +641,7 @@ let loaderFBX = new THREE.FBXLoader();
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['cerca1es'] = obj;
+				elementos['ovelha'] = obj;
 				
 				
 				obj.traverse( function (child){
@@ -565,7 +673,19 @@ let loaderFBX = new THREE.FBXLoader();
 				
 	
 				scene.add(obj);
-			},
+	
+				
+				
+				//staticbounding.push(objBox);
+				console.log("Carregou Ovelha");
+	
+			},//Oque acontece quando terminar!
+			function(andamento){
+				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+			},//O que acontece enquanto esta carregando
+			function(error){
+				console.log(" Deu merda!: "+ error);
+			}//o que acontece se der merda.
 		);
 		
 		//cerca1enorte
@@ -573,7 +693,7 @@ let loaderFBX = new THREE.FBXLoader();
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['cerca1en'] = obj;
+					elementos['ovelha'] = obj;
 					
 					
 					obj.traverse( function (child){
@@ -605,8 +725,19 @@ let loaderFBX = new THREE.FBXLoader();
 					
 		
 					scene.add(obj);
+		
 					
-				},
+					
+					//staticbounding.push(objBox);
+					console.log("Carregou Ovelha");
+		
+				},//Oque acontece quando terminar!
+				function(andamento){
+					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+				},//O que acontece enquanto esta carregando
+				function(error){
+					console.log(" Deu merda!: "+ error);
+				}//o que acontece se der merda.
 			);
 	
 			//cerca1eoeste
@@ -614,7 +745,7 @@ let loaderFBX = new THREE.FBXLoader();
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['cerca1eo'] = obj;
+					elementos['ovelha'] = obj;
 					
 					
 					obj.traverse( function (child){
@@ -646,7 +777,19 @@ let loaderFBX = new THREE.FBXLoader();
 					
 		
 					scene.add(obj);
-				},
+		
+					
+					
+					//staticbounding.push(objBox);
+					console.log("Carregou Ovelha");
+		
+				},//Oque acontece quando terminar!
+				function(andamento){
+					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+				},//O que acontece enquanto esta carregando
+				function(error){
+					console.log(" Deu merda!: "+ error);
+				}//o que acontece se der merda.
 			);
 			
 			//cerca1eleste
@@ -654,7 +797,7 @@ let loaderFBX = new THREE.FBXLoader();
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['cerca1el'] = obj;
+					elementos['ovelha'] = obj;
 					
 					
 					obj.traverse( function (child){
@@ -686,7 +829,19 @@ let loaderFBX = new THREE.FBXLoader();
 					
 		
 					scene.add(obj);
-				},
+		
+					
+					
+					//staticbounding.push(objBox);
+					console.log("Carregou Ovelha");
+		
+				},//Oque acontece quando terminar!
+				function(andamento){
+					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+				},//O que acontece enquanto esta carregando
+				function(error){
+					console.log(" Deu merda!: "+ error);
+				}//o que acontece se der merda.
 		);
 		//===============================//
 	
@@ -699,7 +854,7 @@ let loaderFBX = new THREE.FBXLoader();
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['cerca2es'] = obj;
+					elementos['ovelha'] = obj;
 					
 					
 					obj.traverse( function (child){
@@ -731,7 +886,19 @@ let loaderFBX = new THREE.FBXLoader();
 					
 		
 					scene.add(obj);
-				},
+		
+					
+					
+					//staticbounding.push(objBox);
+					console.log("Carregou Ovelha");
+		
+				},//Oque acontece quando terminar!
+				function(andamento){
+					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+				},//O que acontece enquanto esta carregando
+				function(error){
+					console.log(" Deu merda!: "+ error);
+				}//o que acontece se der merda.
 			);
 			
 			//cerca2enorte
@@ -739,7 +906,7 @@ let loaderFBX = new THREE.FBXLoader();
 				'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 					function(obj){
 						//atribui a cena, colore, reposiciona, rotaciona
-						elementos['cerca2en'] = obj;
+						elementos['ovelha'] = obj;
 						
 						
 						obj.traverse( function (child){
@@ -771,8 +938,21 @@ let loaderFBX = new THREE.FBXLoader();
 			
 						//obj.rotation.x-=1.35;
 						
+			
 						scene.add(obj);
-					},
+			
+						
+						
+						//staticbounding.push(objBox);
+						console.log("Carregou Ovelha");
+			
+					},//Oque acontece quando terminar!
+					function(andamento){
+						console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+					},//O que acontece enquanto esta carregando
+					function(error){
+						console.log(" Deu merda!: "+ error);
+					}//o que acontece se der merda.
 				);
 		
 				//cerca2eoeste
@@ -780,7 +960,7 @@ let loaderFBX = new THREE.FBXLoader();
 				'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 					function(obj){
 						//atribui a cena, colore, reposiciona, rotaciona
-						elementos['cerca2eo'] = obj;
+						elementos['ovelha'] = obj;
 						
 						
 						obj.traverse( function (child){
@@ -814,7 +994,19 @@ let loaderFBX = new THREE.FBXLoader();
 						
 			
 						scene.add(obj);
-					},
+			
+						
+						
+						//staticbounding.push(objBox);
+						console.log("Carregou Ovelha");
+			
+					},//Oque acontece quando terminar!
+					function(andamento){
+						console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+					},//O que acontece enquanto esta carregando
+					function(error){
+						console.log(" Deu merda!: "+ error);
+					}//o que acontece se der merda.
 				);
 				
 				//cerca2eleste
@@ -822,7 +1014,7 @@ let loaderFBX = new THREE.FBXLoader();
 				'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 					function(obj){
 						//atribui a cena, colore, reposiciona, rotaciona
-						elementos['cerca2el'] = obj;
+						elementos['ovelha'] = obj;
 						
 						
 						obj.traverse( function (child){
@@ -856,7 +1048,19 @@ let loaderFBX = new THREE.FBXLoader();
 						
 			
 						scene.add(obj);
-					},
+			
+						
+						
+						//staticbounding.push(objBox);
+						console.log("Carregou Ovelha");
+			
+					},//Oque acontece quando terminar!
+					function(andamento){
+						console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+					},//O que acontece enquanto esta carregando
+					function(error){
+						console.log(" Deu merda!: "+ error);
+					}//o que acontece se der merda.
 			);
 	//===============================//		
 	
@@ -1509,7 +1713,9 @@ var init = function (){
 	
 	let materialGround = new THREE.MeshLambertMaterial({map: groundTexture});
 	materialGround.normalMap = textureLoad.load("assets/texturas/PavingStones/PavingStonesNormal.jpg"); //busca a normal, que da noção básica de profundidade
-	materialGround.displacementMap = textureLoad.load("assets/texturas/PavingStones/PavingStonesDisplacement.jpg")	
+	materialGround.displacementMap = textureLoad.load("assets/texturas/PavingStones/PavingStonesDisplacement.jpg")
+	
+	
 	ground = new THREE.Mesh(
 		new THREE.PlaneBufferGeometry(1000,1000),
 		materialGround
@@ -1527,11 +1733,6 @@ var init = function (){
 	document.addEventListener('keydown', apertouButao);
 };
 
-<<<<<<< Updated upstream
-var animation = function (){
-	requestAnimationFrame(animation); 
-
-=======
 var key_space = false;
 
 var apertouButao =  function(e){
@@ -1564,7 +1765,6 @@ var animation = function (){
 	
 
 
->>>>>>> Stashed changes
 	renderer.render(scene, camera); //tira uma foto do estado e mostra na tela
 }
 
