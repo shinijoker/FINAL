@@ -1233,16 +1233,17 @@ var ambientLightOn = function (){
 	lights['ambient'] = new THREE.AmbientLight(0xffffff,0.5);
 	scene.add(lights['ambient']);
 }
-/*
+
 var pointLightOn = function (){
-	let point = new THREE.PointLight(0xffffff, 3, 200);
+	let point = new THREE.PointLight(0xfffab8, 50, 20);
 	lights['point'] = point;
 	point.castShadow = true;
-	point.position.y=10;
-	point.position.z = 10;
+	point.position.x = 5;
+	point.position.y = 10.5;
+	point.position.z = 0;
+	scene.add(lights['point']);
 
-	scene.add(point);
-}*/
+}
 
 var godSaysLightsOn = function (){
 	ambientLightOn();
@@ -1274,7 +1275,54 @@ var init = function (){
 	camera.position.x = 0;
 	camera.position.y = 1.7;
 	
-	//createGui();	
+	var createGui = function (){
+		const gui = new dat.GUI();
+
+		parametrosGUI = {
+			scalarPuppet: 1,
+			positionX: 0,
+			positionY: -6,
+			positionZ: 0,
+			ambientLight: 0.1,
+			sunLight: 1,
+
+			skyColor : "#000000",
+			groundColor: "#006400",
+		};
+
+		let intensidadeLuz = gui.add(parametrosGUI, 'ambientLight').min(0).max(2).step(0.1).name("Fases do dia");
+		intensidadeLuz.onChange(function (parametro){
+				lights['ambient'].intensity = parametro;
+				if(parametro<= 0.3){
+					scene.background= new THREE.Color("#000000");
+				}else if(parametro>0.3 && parametro<= 0.4){
+					scene.background= new THREE.Color("#2f2538");
+				}else if(parametro>0.4 && parametro<= 0.5){
+					scene.background= new THREE.Color("#382537");
+				}else if(parametro>0.5 && parametro<= 0.6){
+					scene.background= new THREE.Color("#382526");
+				}else if(parametro>0.6 && parametro<= 0.7){
+					scene.background= new THREE.Color("#7d5146");
+				}else if(parametro>0.7 && parametro<= 0.8){
+					scene.background= new THREE.Color("#7d5b46");
+				}else if(parametro>0.8 && parametro<= 0.9){
+					scene.background= new THREE.Color("#7775eb");
+				}else if(parametro>0.9 && parametro<= 1){
+					scene.background= new THREE.Color("#93b0e6");
+				}else if(parametro>1 && parametro<= 1.1){
+					scene.background= new THREE.Color("#93c5e6");
+				}else if(parametro>1.1 && parametro<= 1.2){
+					scene.background= new THREE.Color("#93d4e6");
+				}else if(parametro> 1.2){
+					scene.background= new THREE.Color("#93d4e6");
+				}
+			}
+		);
+		gui.open();
+
+	}
+
+	createGui();
 
 	objLoading();
 
