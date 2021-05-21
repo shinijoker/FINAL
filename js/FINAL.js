@@ -41,17 +41,22 @@ var objLoading = function(){
 
 	
 
+//////////////////////////////////////////////////////////
+
+
+	
+
 	//grama 1 direita//
 	loader.load(
-		'assets/chao/RetangularGrass/RetangularGrass.obj',//arquivo que vamos buscar
+		'assets/chao/retangularGrass/retangularGrass.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['parede1'] = obj;
+			elementos['grama1d'] = obj;
 
 			obj.traverse( function (child){
 				if (child instanceof THREE.Mesh){
 					child.material = new THREE.MeshLambertMaterial({
-						map: new THREE.TextureLoader().load("assets/chao/RetangularGrass/RetangularGrass.jpg")}
+						map: new THREE.TextureLoader().load("assets/chao/retangularGrass/retangularGrass.jpg")}
 						);
 					
 				}
@@ -85,7 +90,7 @@ var objLoading = function(){
 		'assets/chao/retangularGrass/retangularGrass.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['parede1'] = obj;
+			elementos['grama2d'] = obj;
 
 			obj.traverse( function (child){
 				if (child instanceof THREE.Mesh){
@@ -125,7 +130,7 @@ var objLoading = function(){
 		'assets/chao/retangularGrass/retangularGrass.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['parede1'] = obj;
+			elementos['grama1e'] = obj;
 
 			obj.traverse( function (child){
 				if (child instanceof THREE.Mesh){
@@ -165,7 +170,7 @@ var objLoading = function(){
 		'assets/chao/retangularGrass/retangularGrass.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['parede1'] = obj;
+			elementos['grama2e'] = obj;
 
 			obj.traverse( function (child){
 				if (child instanceof THREE.Mesh){
@@ -1135,13 +1140,14 @@ var init = function (){
 	
 	//criar um piso.
 	let textureLoad = new THREE.TextureLoader();
-	let groundTexture = textureLoad.load("assets/texturas/PavingStones070_1K-JPG/PavingStones070_1K_Color.jpg"); //busca a imagem
+	let groundTexture = textureLoad.load("assets/texturas/PavingStonesJPG/PavingStonesColor.jpg"); //busca a imagem
 	groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping; //quero que ela se repita
 	groundTexture.encoding = THREE.sRGBEncoding; //padrão cores, sempre que existir será informado
 	groundTexture.repeat.set(25,25); //número de vezes que ela vai se repetir dentro do nosso chão
 	
 	let materialGround = new THREE.MeshLambertMaterial({map: groundTexture});
-	materialGround.normalMap = textureLoad.load("assets/texturas/PavingStones070_1K-JPG/PavingStones070_1K_Normal.jpg"); //busca a normal, que da noção básica de profundidade
+	materialGround.normalMap = textureLoad.load("assets/texturas/PavingStonesJPG/PavingStonesNormal.jpg"); //busca a normal, que da noção básica de profundidade
+	materialGround.displacementMap = textureLoad.load("assets/texturas/PavingStonesJPG/PavingStonesDisplacement.jpg")
 	
 	
 	ground = new THREE.Mesh(
