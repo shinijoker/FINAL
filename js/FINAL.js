@@ -1218,19 +1218,6 @@ var objLoading = function(){
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 //troca a ação do nosso modelo
 const setAction = function(toAction) {
     if (toAction != activeAction) {
@@ -1320,49 +1307,10 @@ var init = function (){
 
 	scene.fog = new THREE.Fog(0xcce0ff, 100, 500);
 
-
-	document.addEventListener('keydown', apertouButao);
-	//document.addEventListener('keyup', soltouBotao);
-
 };
 
 
 
-var apertouButao =  function(e){
-	console.log(e.keyCode);
-
-	if (e.keyCode == 38){ //douwn
-		console.log(char[1].children[0]);
-		char.forEach(function (item){
-			item.position.z-=0.05;
-		});
-	}
-	if (e.keyCode == 40){ // UP
-		console.log(char[1].children[1]);
-		char.forEach(function (item){
-			item.position.z+=0.05;
-		});
-	}
-	if (e.keyCode == 37){ //left
-		console.log(char[1]);
-		char.forEach(function (item){
-			item.position.x-=0.1;
-		});
-	}
-	if (e.keyCode == 39){ //right
-		char.forEach(function (item){
-			item.position.x+=0.1;
-		});
-	}
-}
-
-var count =0; 
-var velocidadeOmbroDireitoC = -0.01;
-var velocidadeOmbroDireitoL = -0.01;
-var pulando = false;
-var velocidadePulo = 0.5;
-var altura = -1;
-var bateu = false;
 
 var animation = function (){
 	requestAnimationFrame(animation); 
@@ -1371,23 +1319,12 @@ var animation = function (){
 
 	if (loadFinished){
 		mixer.update(delta);
-
-		
-
-		
-
 		charBox[0].setFromObject(char[1].children[0]);
 		helperChar.update();
 		
 	}
-	
-
 
 	renderer.render(scene, camera); //tira uma foto do estado e mostra na tela
-}
-
-function paraRadianos(angulo){
-	return angulo * (Math.PI/180);
 }
 
 window.onload = this.init
