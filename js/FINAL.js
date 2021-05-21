@@ -156,13 +156,13 @@ var init = function (){
 	
 	//criar um piso.
 	let textureLoad = new THREE.TextureLoader();
-	let groundTexture = textureLoad.load("assets/texturas/terrain/grasslight-big.jpg"); //busca a imagem
+	let groundTexture = textureLoad.load("assets/texturas/PavingStones070_1K-JPG/PavingStones070_1K_Color.jpg"); //busca a imagem
 	groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping; //quero que ela se repita
 	groundTexture.encoding = THREE.sRGBEncoding; //padrão cores, sempre que existir será informado
 	groundTexture.repeat.set(25,25); //número de vezes que ela vai se repetir dentro do nosso chão
 	
 	let materialGround = new THREE.MeshLambertMaterial({map: groundTexture});
-	materialGround.normalMap = textureLoad.load("assets/texturas/terrain/grasslight-big-nm.jpg"); //busca a normal, que da noção básica de profundidade
+	materialGround.normalMap = textureLoad.load("assets/texturas/PavingStones070_1K-JPG/PavingStones070_1K_Normal.jpg"); //busca a normal, que da noção básica de profundidade
 	
 	
 	ground = new THREE.Mesh(
