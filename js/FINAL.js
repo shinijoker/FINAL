@@ -1348,7 +1348,6 @@ var ambientLightOn = function (){
 
 var directionalLightOn = function () {
 	let light = new THREE.DirectionalLight(0xffffff,1);
-	light.castShadow = true;
 	light.shadow.mapSize.width = 4096;
     light.shadow.mapSize.height = 4096;
     light.shadow.camera.left = 1000;
@@ -1368,10 +1367,9 @@ var directionalLightOn = function () {
 }
 
 var pointLightOn1 = function (){
-	let point1 = new THREE.PointLight(0xffffff, 1, 10);
+	let point1 = new THREE.PointLight(0xffffff, 1, 50);
 
 	lights['point1'] = point1;
-	point1.castShadow = true;
 	point1.position.x = -15;
 	point1.position.y = 35;
 	point1.position.z = -85;
@@ -1379,10 +1377,9 @@ var pointLightOn1 = function (){
 }
 
 var pointLightOn2 = function (){
-	let point1 = new THREE.PointLight(0xffffff, 1, 10);
+	let point1 = new THREE.PointLight(0xffffff, 1, 50);
 
 	lights['point2'] = point1;
-	point1.castShadow = true;
 	point1.position.x = -15;
 	point1.position.y = 35;
 	point1.position.z = -110;
@@ -1390,10 +1387,9 @@ var pointLightOn2 = function (){
 }
 
 var pointLightOn3 = function (){
-	let point1 = new THREE.PointLight(0xffffff, 1, 10);
+	let point1 = new THREE.PointLight(0xffffff, 1, 50);
 
 	lights['point3'] = point1;
-	point1.castShadow = true;
 	point1.position.x = 15;
 	point1.position.y = 35;
 	point1.position.z = -110;
@@ -1401,10 +1397,9 @@ var pointLightOn3 = function (){
 }
 
 var pointLightOn4 = function (){
-	let point1 = new THREE.PointLight(0xffffff, 1, 10);
+	let point1 = new THREE.PointLight(0xffffff, 1, 50);
 
 	lights['point4'] = point1;
-	point1.castShadow = true;
 	point1.position.x = 15;
 	point1.position.y = 35;
 	point1.position.z = -85;
