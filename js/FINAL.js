@@ -1085,51 +1085,7 @@ var ambientLightOn = function (){
 	lights['ambient'] = new THREE.AmbientLight(0xffffff,0.5);
 	scene.add(lights['ambient']);
 }
-
-var hemisphereLightOn = function(){
-	lights['hemisphere'] = new THREE.HemisphereLight(0xcce0ff, 0xffffff, 1);
-	scene.add(lights['hemisphere']);
-}
-
-var directionalLightOn = function () {
-	let light = new THREE.DirectionalLight(0xffffff,1);
-	light.castShadow = true;
-	light.shadow.mapSize.width = 4096;
-    light.shadow.mapSize.height = 4096;
-    light.shadow.camera.left = 1000;
-    light.shadow.camera.bottom = 1000;
-    light.shadow.camera.right = -1000
-    light.shadow.camera.top = -1000;
-
-	light.position.y = 200;
-	light.position.x = 100;
-	light.target = ground;
-
-
-	scene.add(light);
-	scene.add(light.target)
-
-	lights['directional'] = light;
-}
-
-var spotLightOn = function(){
-	let spot = new THREE.SpotLight(0xffffff, 0);
-	spot.angle = 0.3;
-	spot.castShadow = true;
-
-	spot.position.z = 40;
-	spot.position.y = 15;
-
-	spot.shadow.distance = 20;
-	spot.shadow.penumbra = 30;
-	spot.shadow.angle = 25;
-	
-	spot.target.position.set(0,5,0);
-
-	lights['spot'] = spot;
-	scene.add(spot);
-}
-
+/*
 var pointLightOn = function (){
 	let point = new THREE.PointLight(0xffffff, 3, 200);
 	lights['point'] = point;
@@ -1138,13 +1094,9 @@ var pointLightOn = function (){
 	point.position.z = 10;
 
 	scene.add(point);
-}
+}*/
 
 var godSaysLightsOn = function (){
-	//hemisphereLightOn();
-	directionalLightOn();
-	//spotLightOn();
-	//pointLightOn();
 	ambientLightOn();
 }
 
