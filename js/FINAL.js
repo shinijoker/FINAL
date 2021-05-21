@@ -131,10 +131,6 @@ var init = function (){
 					);
 
 	
-
-	// geometriaA = new THREE.Mesh(new THREE.BoxGeometry(4, 4, 4), new THREE.MeshBasicMaterial({ color: 0xff0000}));
-	// geometriaA.position.x = -8;
-	// scene.add(geometriaA);
 	
 	renderer = new THREE.WebGLRenderer({antialias: true});
 	renderer.shadowMap.enabled = true;
@@ -145,9 +141,7 @@ var init = function (){
 	camera.position.x = 0;
 	camera.position.y = 1.7;
 	
-	createGui();
-
-	//criaMonstro();	
+	createGui();	
 
 	objLoading();
 
@@ -175,8 +169,6 @@ var init = function (){
 	scene.add(ground);
 	godSaysLightsOn();
 
-	//camera.add(lights["spot"]);
-
 	controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 	scene.fog = new THREE.Fog(0xcce0ff, 100, 500);
@@ -189,30 +181,8 @@ var init = function (){
 
 
 
-var key_r = false;
-var key_space = false;
-var key_q = false;
-
-var soltouBotao = function(e){
-
-	if (e.keyCode == 82){ //r
-		key_r = false;
-	}
-	if (e.keyCode == 32){ //espaço
-		key_space = false;
-	}
-	if (e.keyCode == 81){ //espaço
-		key_q = false;
-	}
-}
-
-
 var apertouButao =  function(e){
 	console.log(e.keyCode);
-
-	if (e.keyCode == 81){ // q
-		key_q = true;		
-	}
 
 	if (e.keyCode == 38){ //douwn
 		console.log(char[1].children[0]);
