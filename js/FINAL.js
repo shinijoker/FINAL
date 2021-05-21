@@ -1162,9 +1162,153 @@ var objLoading = function(){
 			console.log((andamento.loaded / andamento.total *100) + "% pronto!");
 		},//metodo executa enquanto carrega
 		function (error){
-			console.log("Deu caca: " + error);
+			console.log("A ARVORE DO MICO MANO: " + error);
 		} //metodo deu merda
 		);
+
+
+	// pinguim //	
+
+			loader.load(
+				'assets/staticAnimals/Penguin/PenguinBaseMesh.obj',
+				function(obj){
+					elementos['peng'] = obj;
+
+					obj.traverse( function (child){
+						if (child instanceof THREE.Mesh){
+							child.material = new THREE.MeshLambertMaterial({
+								map: new THREE.TextureLoader().load("assets/staticAnimals/Penguin/PenguinDiffuseColor.png")
+								
+								
+							}
+								
+							);
+							
+						}
+					}
+				);
+							obj.scale.y = 2;
+							obj.scale.z = 2;
+							obj.scale.x = 2;
+			
+							obj.position.y = -6.7;
+							obj.position.x = -50;
+							obj.position.z = -50;
+				
+							obj.rotation.x=0;
+							obj.rotation.y=0;
+							scene.add(new THREE.BoxHelper(obj, 0xffff00));
+				
+							scene.add(obj);
+				
+							obj.children[0].geometry.computeBoundingBox();
+							let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+							staticBounding.push(objBox);
+							console.log("Carregou Ovelha");
+				
+						},//Oque acontece quando terminar!
+						function(andamento){
+							console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+						},//O que acontece enquanto esta carregando
+						function(error){
+							console.log(" Deu merda!: "+ error);
+						}//o que acontece se der merda.
+											
+			);
+			
+
+	// mario //
+
+			loader.load(
+				'assets/animatedAnimals/mario/Mario.obj',
+				function(obj){
+					elementos['mamamia'] = obj;
+
+					obj.traverse( function (child){
+						if (child instanceof THREE.Mesh){
+							child.material = new THREE.MeshLambertMaterial({
+								map: new THREE.TextureLoader().load("assets/animatedAnimals/mario/MarioAlbedo.png"),
+							}
+								
+							);
+							
+						}
+					}
+				);
+							obj.scale.y = .1;
+							obj.scale.z = .1;
+							obj.scale.x = .1;
+			
+							obj.position.y = -6.7;
+							obj.position.x = -50;
+							obj.position.z = -150;
+				
+							obj.rotation.x=0;
+							obj.rotation.y=0;
+							scene.add(new THREE.BoxHelper(obj, 0xffff00));
+				
+							scene.add(obj);
+				
+							obj.children[0].geometry.computeBoundingBox();
+							let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+							staticBounding.push(objBox);
+							console.log("Carregou Ovelha");
+				
+						},//Oque acontece quando terminar!
+						function(andamento){
+							console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+						},//O que acontece enquanto esta carregando
+						function(error){
+							console.log(" Deu merda!: "+ error);
+						}//o que acontece se der merda.
+											
+			);
+
+	// foca //
+
+			loader.load(
+				'assets/staticAnimals/SeaLion/sealion.obj',
+				function(obj){
+					elementos['seal'] = obj;
+
+					obj.traverse( function (child){
+						if (child instanceof THREE.Mesh){
+							child.material = new THREE.MeshLambertMaterial({
+								
+								map: new THREE.TextureLoader().load("assets/staticAnimals/SeaLion/sealionDiffuse.jpg")
+							});
+							
+						}
+					}
+				);
+							obj.scale.y = .1;
+							obj.scale.z = .1;
+							obj.scale.x = .1;
+			
+							obj.position.y = -7;
+							obj.position.x = 50;
+							obj.position.z = -150;
+				
+							obj.rotation.x=-1.55;
+							obj.rotation.y=0;
+							scene.add(new THREE.BoxHelper(obj, 0xffff00));
+				
+							scene.add(obj);
+				
+							obj.children[0].geometry.computeBoundingBox();
+							let objBox = new THREE.Box3().setFromObject(obj.children[0]);
+							staticBounding.push(objBox);
+							console.log("Carregou Ovelha");
+				
+						},//Oque acontece quando terminar!
+						function(andamento){
+							console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+						},//O que acontece enquanto esta carregando
+						function(error){
+							console.log(" Deu merda!: "+ error);
+						}//o que acontece se der merda.
+											
+			);
 
 
 
