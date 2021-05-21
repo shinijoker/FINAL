@@ -1526,23 +1526,7 @@ var init = function (){
 				}
 			}
 		);
-		let folderPosition = gui.addFolder("Position");
-
-		let positionX = folderPosition.add(parametrosGUI, 'positionX').min(0).max(600).step(15).name("Position X");
-		positionX.onChange(function (parametro){
-			lights['sol'].position.x = parametro;
-			}
-		);
-		let positionY = folderPosition.add(parametrosGUI, 'positionY').min(0).max(600).step(15).name("Position Y");
-		positionY.onChange(function (parametro){
-			lights['sol'].position.y = parametro;
-			}
-		);
-		let positionZ = folderPosition.add(parametrosGUI, 'positionZ').min(0).max(600).step(15).name("Position Z");
-		positionZ.onChange(function (parametro){
-			lights['sol'].position.z = parametro;
-			}
-		);
+		
 		gui.open();
 
 	}
