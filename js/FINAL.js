@@ -211,7 +211,7 @@ var objLoading = function(){
 
 	//cerca1dsul
 	loader.load(
-	'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+	'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
 			elementos['ovelha'] = obj;
@@ -220,7 +220,7 @@ var objLoading = function(){
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
 						child.material = new THREE.MeshLambertMaterial({
-							map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+							map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 							//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 							
 							
@@ -263,7 +263,7 @@ var objLoading = function(){
 	
 	//cerca1dnorte
 	loader.load(
-		'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
 				elementos['ovelha'] = obj;
@@ -272,7 +272,7 @@ var objLoading = function(){
 				obj.traverse( function (child){
 						if (child instanceof THREE.Mesh){
 							child.material = new THREE.MeshLambertMaterial({
-								map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+								map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 								//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 								
 								
@@ -315,7 +315,7 @@ var objLoading = function(){
 
 		//cerca1doeste
 	loader.load(
-		'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
 				elementos['ovelha'] = obj;
@@ -324,7 +324,7 @@ var objLoading = function(){
 				obj.traverse( function (child){
 						if (child instanceof THREE.Mesh){
 							child.material = new THREE.MeshLambertMaterial({
-								map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+								map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 								//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 								
 								
@@ -367,7 +367,7 @@ var objLoading = function(){
 		
 		//cerca1dleste
 	loader.load(
-		'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
 				elementos['ovelha'] = obj;
@@ -376,7 +376,7 @@ var objLoading = function(){
 				obj.traverse( function (child){
 						if (child instanceof THREE.Mesh){
 							child.material = new THREE.MeshLambertMaterial({
-								map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+								map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 								//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 								
 								
@@ -424,7 +424,7 @@ var objLoading = function(){
 
 	//cerca2dsul
 	loader.load(
-		'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
 				elementos['ovelha'] = obj;
@@ -433,7 +433,7 @@ var objLoading = function(){
 				obj.traverse( function (child){
 						if (child instanceof THREE.Mesh){
 							child.material = new THREE.MeshLambertMaterial({
-								map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+								map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 								//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 								
 								
@@ -476,7 +476,7 @@ var objLoading = function(){
 		
 		//cerca2dnorte
 		loader.load(
-			'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
 					elementos['ovelha'] = obj;
@@ -485,7 +485,7 @@ var objLoading = function(){
 					obj.traverse( function (child){
 							if (child instanceof THREE.Mesh){
 								child.material = new THREE.MeshLambertMaterial({
-									map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+									map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 									//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 									
 									
@@ -528,7 +528,7 @@ var objLoading = function(){
 	
 			//cerca2doeste
 		loader.load(
-			'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
 					elementos['ovelha'] = obj;
@@ -537,7 +537,7 @@ var objLoading = function(){
 					obj.traverse( function (child){
 							if (child instanceof THREE.Mesh){
 								child.material = new THREE.MeshLambertMaterial({
-									map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+									map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 									//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 									
 									
@@ -580,7 +580,7 @@ var objLoading = function(){
 			
 			//cerca2dleste
 		loader.load(
-			'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
 					elementos['ovelha'] = obj;
@@ -589,7 +589,7 @@ var objLoading = function(){
 					obj.traverse( function (child){
 							if (child instanceof THREE.Mesh){
 								child.material = new THREE.MeshLambertMaterial({
-									map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+									map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 									//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 									
 									
@@ -637,7 +637,7 @@ var objLoading = function(){
 
 	//cerca1esul
 	loader.load(
-		'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
 				elementos['ovelha'] = obj;
@@ -646,7 +646,7 @@ var objLoading = function(){
 				obj.traverse( function (child){
 						if (child instanceof THREE.Mesh){
 							child.material = new THREE.MeshLambertMaterial({
-								map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+								map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 								//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 								
 								
@@ -689,7 +689,7 @@ var objLoading = function(){
 		
 		//cerca1enorte
 		loader.load(
-			'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
 					elementos['ovelha'] = obj;
@@ -698,7 +698,7 @@ var objLoading = function(){
 					obj.traverse( function (child){
 							if (child instanceof THREE.Mesh){
 								child.material = new THREE.MeshLambertMaterial({
-									map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+									map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 									//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 									
 									
@@ -741,7 +741,7 @@ var objLoading = function(){
 	
 			//cerca1eoeste
 		loader.load(
-			'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
 					elementos['ovelha'] = obj;
@@ -750,7 +750,7 @@ var objLoading = function(){
 					obj.traverse( function (child){
 							if (child instanceof THREE.Mesh){
 								child.material = new THREE.MeshLambertMaterial({
-									map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+									map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 									//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 									
 									
@@ -793,7 +793,7 @@ var objLoading = function(){
 			
 			//cerca1eleste
 		loader.load(
-			'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
 					elementos['ovelha'] = obj;
@@ -802,7 +802,7 @@ var objLoading = function(){
 					obj.traverse( function (child){
 							if (child instanceof THREE.Mesh){
 								child.material = new THREE.MeshLambertMaterial({
-									map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+									map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 									//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 									
 									
@@ -850,7 +850,7 @@ var objLoading = function(){
 	
 		//cerca2esul
 		loader.load(
-			'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
 					elementos['ovelha'] = obj;
@@ -859,7 +859,7 @@ var objLoading = function(){
 					obj.traverse( function (child){
 							if (child instanceof THREE.Mesh){
 								child.material = new THREE.MeshLambertMaterial({
-									map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+									map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 									//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 									
 									
@@ -902,7 +902,7 @@ var objLoading = function(){
 			
 			//cerca2enorte
 			loader.load(
-				'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+				'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 					function(obj){
 						//atribui a cena, colore, reposiciona, rotaciona
 						elementos['ovelha'] = obj;
@@ -911,7 +911,7 @@ var objLoading = function(){
 						obj.traverse( function (child){
 								if (child instanceof THREE.Mesh){
 									child.material = new THREE.MeshLambertMaterial({
-										map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+										map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 										//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 										
 										
@@ -954,7 +954,7 @@ var objLoading = function(){
 		
 				//cerca2eoeste
 			loader.load(
-				'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+				'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 					function(obj){
 						//atribui a cena, colore, reposiciona, rotaciona
 						elementos['ovelha'] = obj;
@@ -963,7 +963,7 @@ var objLoading = function(){
 						obj.traverse( function (child){
 								if (child instanceof THREE.Mesh){
 									child.material = new THREE.MeshLambertMaterial({
-										map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+										map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 										//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 										
 										
@@ -1006,7 +1006,7 @@ var objLoading = function(){
 				
 				//cerca2eleste
 			loader.load(
-				'assets/cerca/steel fence/fance.obj',//arquivo que vamos buscar
+				'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 					function(obj){
 						//atribui a cena, colore, reposiciona, rotaciona
 						elementos['ovelha'] = obj;
@@ -1015,7 +1015,7 @@ var objLoading = function(){
 						obj.traverse( function (child){
 								if (child instanceof THREE.Mesh){
 									child.material = new THREE.MeshLambertMaterial({
-										map: new THREE.TextureLoader().load("assets/cerca/steel fence/fance.png"),
+										map: new THREE.TextureLoader().load("assets/cerca/steelFence/fance.png"),
 										//alphaMap: new THREE.TextureLoader().load("assets/cerca/wire fence/tex/fence_alpha.png")
 										
 										
