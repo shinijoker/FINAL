@@ -27,10 +27,6 @@ var activeAction;
 var lastAction;
 var loadFinished;
 
-//bounding box
-var staticElements = [];
-var charBox = [];
-var helperChar;
 
 var clock = new THREE.Clock();
 
@@ -249,13 +245,13 @@ var objLoading = function(){
 			obj.position.z = -20;
 
 			//obj.rotation.x-=1.35;
-			scene.add(new THREE.BoxHelper(obj, 0xffff00));
+			
 
 			scene.add(obj);
 
-			obj.children[0].geometry.computeBoundingBox();
-			let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-			staticBounding.push(objBox);
+			
+			
+			//staticbounding.push(objBox);
 			console.log("Carregou Ovelha");
 
 		},//Oque acontece quando terminar!
@@ -301,13 +297,13 @@ var objLoading = function(){
 				obj.position.z = -80.5;
 	
 				//obj.rotation.x-=1.35;
-				scene.add(new THREE.BoxHelper(obj, 0xffff00));
+				
 	
 				scene.add(obj);
 	
-				obj.children[0].geometry.computeBoundingBox();
-				let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-				staticBounding.push(objBox);
+				
+				
+				//staticbounding.push(objBox);
 				console.log("Carregou Ovelha");
 	
 			},//Oque acontece quando terminar!
@@ -353,13 +349,13 @@ var objLoading = function(){
 				obj.position.z = -50;
 	
 				obj.rotation.y-=4.7125;
-				scene.add(new THREE.BoxHelper(obj, 0xffff00));
+				
 	
 				scene.add(obj);
 	
-				obj.children[0].geometry.computeBoundingBox();
-				let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-				staticBounding.push(objBox);
+				
+				
+				//staticbounding.push(objBox);
 				console.log("Carregou Ovelha");
 	
 			},//Oque acontece quando terminar!
@@ -405,13 +401,13 @@ var objLoading = function(){
 				obj.position.z = -50;
 	
 				obj.rotation.y-=4.7125;
-				scene.add(new THREE.BoxHelper(obj, 0xffff00));
+				
 	
 				scene.add(obj);
 	
-				obj.children[0].geometry.computeBoundingBox();
-				let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-				staticBounding.push(objBox);
+				
+				
+				//staticbounding.push(objBox);
 				console.log("Carregou Ovelha");
 	
 			},//Oque acontece quando terminar!
@@ -462,13 +458,13 @@ var objLoading = function(){
 				obj.position.z = -120;
 	
 				//obj.rotation.x-=1.35;
-				scene.add(new THREE.BoxHelper(obj, 0xffff00));
+				
 	
 				scene.add(obj);
 	
-				obj.children[0].geometry.computeBoundingBox();
-				let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-				staticBounding.push(objBox);
+				
+				
+				//staticbounding.push(objBox);
 				console.log("Carregou Ovelha");
 	
 			},//Oque acontece quando terminar!
@@ -514,13 +510,13 @@ var objLoading = function(){
 					obj.position.z = -180.5;
 		
 					//obj.rotation.x-=1.35;
-					scene.add(new THREE.BoxHelper(obj, 0xffff00));
+					
 		
 					scene.add(obj);
 		
-					obj.children[0].geometry.computeBoundingBox();
-					let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-					staticBounding.push(objBox);
+					
+					
+					//staticbounding.push(objBox);
 					console.log("Carregou Ovelha");
 		
 				},//Oque acontece quando terminar!
@@ -566,13 +562,13 @@ var objLoading = function(){
 					obj.position.z = -150;
 		
 					obj.rotation.y-=4.7125;
-					scene.add(new THREE.BoxHelper(obj, 0xffff00));
+					
 		
 					scene.add(obj);
 		
-					obj.children[0].geometry.computeBoundingBox();
-					let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-					staticBounding.push(objBox);
+					
+					
+					//staticbounding.push(objBox);
 					console.log("Carregou Ovelha");
 		
 				},//Oque acontece quando terminar!
@@ -618,13 +614,13 @@ var objLoading = function(){
 					obj.position.z = -150;
 		
 					obj.rotation.y-=4.7125;
-					scene.add(new THREE.BoxHelper(obj, 0xffff00));
+					
 		
 					scene.add(obj);
 		
-					obj.children[0].geometry.computeBoundingBox();
-					let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-					staticBounding.push(objBox);
+					
+					
+					//staticbounding.push(objBox);
 					console.log("Carregou Ovelha");
 		
 				},//Oque acontece quando terminar!
@@ -675,13 +671,13 @@ var objLoading = function(){
 				obj.position.z = -20;
 	
 				//obj.rotation.x-=1.35;
-				scene.add(new THREE.BoxHelper(obj, 0xffff00));
+				
 	
 				scene.add(obj);
 	
-				obj.children[0].geometry.computeBoundingBox();
-				let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-				staticBounding.push(objBox);
+				
+				
+				//staticbounding.push(objBox);
 				console.log("Carregou Ovelha");
 	
 			},//Oque acontece quando terminar!
@@ -727,13 +723,13 @@ var objLoading = function(){
 					obj.position.z = -80.5;
 		
 					//obj.rotation.x-=1.35;
-					scene.add(new THREE.BoxHelper(obj, 0xffff00));
+					
 		
 					scene.add(obj);
 		
-					obj.children[0].geometry.computeBoundingBox();
-					let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-					staticBounding.push(objBox);
+					
+					
+					//staticbounding.push(objBox);
 					console.log("Carregou Ovelha");
 		
 				},//Oque acontece quando terminar!
@@ -779,13 +775,13 @@ var objLoading = function(){
 					obj.position.z = -50;
 		
 					obj.rotation.y-=4.7125;
-					scene.add(new THREE.BoxHelper(obj, 0xffff00));
+					
 		
 					scene.add(obj);
 		
-					obj.children[0].geometry.computeBoundingBox();
-					let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-					staticBounding.push(objBox);
+					
+					
+					//staticbounding.push(objBox);
 					console.log("Carregou Ovelha");
 		
 				},//Oque acontece quando terminar!
@@ -831,13 +827,13 @@ var objLoading = function(){
 					obj.position.z = -50;
 		
 					obj.rotation.y-=4.7125;
-					scene.add(new THREE.BoxHelper(obj, 0xffff00));
+					
 		
 					scene.add(obj);
 		
-					obj.children[0].geometry.computeBoundingBox();
-					let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-					staticBounding.push(objBox);
+					
+					
+					//staticbounding.push(objBox);
 					console.log("Carregou Ovelha");
 		
 				},//Oque acontece quando terminar!
@@ -888,13 +884,13 @@ var objLoading = function(){
 					obj.position.z = -120;
 		
 					//obj.rotation.x-=1.35;
-					scene.add(new THREE.BoxHelper(obj, 0xffff00));
+					
 		
 					scene.add(obj);
 		
-					obj.children[0].geometry.computeBoundingBox();
-					let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-					staticBounding.push(objBox);
+					
+					
+					//staticbounding.push(objBox);
 					console.log("Carregou Ovelha");
 		
 				},//Oque acontece quando terminar!
@@ -942,13 +938,13 @@ var objLoading = function(){
 						obj.position.z = -180.5;
 			
 						//obj.rotation.x-=1.35;
-						scene.add(new THREE.BoxHelper(obj, 0xffff00));
+						
 			
 						scene.add(obj);
 			
-						obj.children[0].geometry.computeBoundingBox();
-						let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-						staticBounding.push(objBox);
+						
+						
+						//staticbounding.push(objBox);
 						console.log("Carregou Ovelha");
 			
 					},//Oque acontece quando terminar!
@@ -996,13 +992,13 @@ var objLoading = function(){
 						obj.position.z = -150;
 			
 						obj.rotation.y-=4.7125;
-						scene.add(new THREE.BoxHelper(obj, 0xffff00));
+						
 			
 						scene.add(obj);
 			
-						obj.children[0].geometry.computeBoundingBox();
-						let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-						staticBounding.push(objBox);
+						
+						
+						//staticbounding.push(objBox);
 						console.log("Carregou Ovelha");
 			
 					},//Oque acontece quando terminar!
@@ -1050,13 +1046,13 @@ var objLoading = function(){
 						obj.position.z = -150;
 			
 						obj.rotation.y-=4.7125;
-						scene.add(new THREE.BoxHelper(obj, 0xffff00));
+						
 			
 						scene.add(obj);
 			
-						obj.children[0].geometry.computeBoundingBox();
-						let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-						staticBounding.push(objBox);
+						
+						
+						//staticbounding.push(objBox);
 						console.log("Carregou Ovelha");
 			
 					},//Oque acontece quando terminar!
@@ -1102,13 +1098,13 @@ var objLoading = function(){
 				
 							obj.rotation.x=-1.2;
 							obj.rotation.y=0.5;
-							scene.add(new THREE.BoxHelper(obj, 0xffff00));
+							
 				
 							scene.add(obj);
 				
-							obj.children[0].geometry.computeBoundingBox();
-							let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-							staticBounding.push(objBox);
+							
+							
+							//staticbounding.push(objBox);
 							console.log("Carregou Ovelha");
 				
 						},//Oque acontece quando terminar!
@@ -1147,13 +1143,7 @@ var objLoading = function(){
 				
 				//object.rotation.y += 1;
 
-			object.castShadow = true;
-			scene.add(new THREE.BoxHelper(object, 0xffff00));
-			//AS 3 LINHAS ABAIXO N ERAM COMENTADAS
-			//object.children[0].geometry.computeBoundingBox();
-			//let objBox = new THREE.Box3().setFromObject(object.children[0]);
-			//staticBounding.push(objBox);
-
+			object.castShadow = true;			
 		// camera.lookAt(objCarregado.position)
 
 			scene.add(object);    
@@ -1197,13 +1187,13 @@ var objLoading = function(){
 				
 							obj.rotation.x=0;
 							obj.rotation.y=0;
-							scene.add(new THREE.BoxHelper(obj, 0xffff00));
+							
 				
 							scene.add(obj);
 				
-							obj.children[0].geometry.computeBoundingBox();
-							let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-							staticBounding.push(objBox);
+							
+							
+							//staticbounding.push(objBox);
 							console.log("Carregou Ovelha");
 				
 						},//Oque acontece quando terminar!
@@ -1245,13 +1235,13 @@ var objLoading = function(){
 				
 							obj.rotation.x=0;
 							obj.rotation.y=0;
-							scene.add(new THREE.BoxHelper(obj, 0xffff00));
+							
 				
 							scene.add(obj);
 				
-							obj.children[0].geometry.computeBoundingBox();
-							let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-							staticBounding.push(objBox);
+							
+							
+							//staticbounding.push(objBox);
 							console.log("Carregou Ovelha");
 				
 						},//Oque acontece quando terminar!
@@ -1291,13 +1281,13 @@ var objLoading = function(){
 				
 							obj.rotation.x=-1.55;
 							obj.rotation.y=0;
-							scene.add(new THREE.BoxHelper(obj, 0xffff00));
+							
 				
 							scene.add(obj);
 				
-							obj.children[0].geometry.computeBoundingBox();
-							let objBox = new THREE.Box3().setFromObject(obj.children[0]);
-							staticBounding.push(objBox);
+							
+							
+							//staticbounding.push(objBox);
 							console.log("Carregou Ovelha");
 				
 						},//Oque acontece quando terminar!
@@ -1716,14 +1706,8 @@ var init = function (){
 var animation = function (){
 	requestAnimationFrame(animation); 
 
-	let delta = clock.getDelta();
 
-	if (loadFinished){
-		mixer.update(delta);
-		charBox[0].setFromObject(char[1].children[0]);
-		helperChar.update();
-		
-	}
+	
 
 	renderer.render(scene, camera); //tira uma foto do estado e mostra na tela
 }
