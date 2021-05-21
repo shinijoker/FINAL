@@ -1068,7 +1068,7 @@ var objLoading = function(){
 					}//o que acontece se der merda.
 			);
 	//===============================//		
-			
+	
 	// mico //	
 
 			loader.load(
@@ -1187,6 +1187,7 @@ var objLoading = function(){
 						map: new THREE.TextureLoader().load("assets/Poste/poste.png")}
 					);
 					child.receiveShadow = true;
+					child.castShadow = true;
 				}
 			}
 		);
@@ -1225,6 +1226,7 @@ var objLoading = function(){
 						map: new THREE.TextureLoader().load("assets/Poste/poste.png")}
 					);
 					child.receiveShadow = true;
+					child.castShadow = true;
 				}
 			}
 		);
@@ -1261,6 +1263,7 @@ var objLoading = function(){
 						map: new THREE.TextureLoader().load("assets/Poste/poste.png")}
 					);
 					child.receiveShadow = true;
+					child.castShadow = true;
 				}
 			}
 		);
@@ -1298,6 +1301,7 @@ var objLoading = function(){
 						map: new THREE.TextureLoader().load("assets/Poste/poste.png")}
 					);
 					child.receiveShadow = true;
+					child.castShadow = true;
 				}
 			}
 		);
@@ -1363,22 +1367,60 @@ var directionalLightOn = function () {
 	lights['sol'] = light;
 }
 
-var pointLightOn = function (){
-	let point1 = new THREE.PointLight(0xfffab8, 10, 60);
+var pointLightOn1 = function (){
+	let point1 = new THREE.PointLight(0xffffff, 1, 10);
 
 	lights['point1'] = point1;
 	point1.castShadow = true;
-	point1.position.x = -10;
-	point1.position.y = 10.5;
+	point1.position.x = -15;
+	point1.position.y = 35;
 	point1.position.z = -85;
 	scene.add(lights['point1']);
 }
 
+var pointLightOn2 = function (){
+	let point1 = new THREE.PointLight(0xffffff, 1, 10);
+
+	lights['point2'] = point1;
+	point1.castShadow = true;
+	point1.position.x = -15;
+	point1.position.y = 35;
+	point1.position.z = -110;
+	scene.add(lights['point2']);
+}
+
+var pointLightOn3 = function (){
+	let point1 = new THREE.PointLight(0xffffff, 1, 10);
+
+	lights['point3'] = point1;
+	point1.castShadow = true;
+	point1.position.x = 15;
+	point1.position.y = 35;
+	point1.position.z = -110;
+	scene.add(lights['point3']);
+}
+
+var pointLightOn4 = function (){
+	let point1 = new THREE.PointLight(0xffffff, 1, 10);
+
+	lights['point4'] = point1;
+	point1.castShadow = true;
+	point1.position.x = 15;
+	point1.position.y = 35;
+	point1.position.z = -85;
+	scene.add(lights['point4']);
+}
+
+
 var godSaysLightsOn = function (){
 	ambientLightOn();
 	directionalLightOn();
-	pointLightOn();
+	pointLightOn1();
+	pointLightOn2();
+	pointLightOn3();
+	pointLightOn4();
 }
+
 
 
 
@@ -1410,12 +1452,16 @@ var init = function (){
 		const gui = new dat.GUI();
 
 		parametrosGUI = {
-			ambientLight: 0,
+		ambientLight: 0,
+		scalarPuppet: 1,
+		positionX: 0,
+		positionY: -6,
+		positionZ: 0,
+		sunLight: 1,
 		};
 
-		let intensidadeLuz = gui.add(parametrosGUI, 'ambientLight').min(0).max(2).step(0.1).name("Fases do dia");
+		let intensidadeLuz = gui.add(parametrosGUI, 'ambientLight').min(0).max(1.2).step(0.1).name("Fases do dia");
 		intensidadeLuz.onChange(function (parametro){
-				lights['ambient'].intensity = parametro;
 				if(parametro<= 0.3){
 					scene.background= new THREE.Color("#000000");
 					lights['sol'].intensity = 0.3;
@@ -1428,26 +1474,78 @@ var init = function (){
 				}else if(parametro>0.5 && parametro<= 0.6){
 					scene.background= new THREE.Color("#382526");
 					lights['sol'].intensity = 0.5;
+					lights['sol'].position.z = 210;
+					lights['sol'].position.x = 210;
 				}else if(parametro>0.6 && parametro<= 0.7){
 					scene.background= new THREE.Color("#b87477");
 					lights['sol'].intensity = 0.6;
+					lights['sol'].position.z = 130;
+					lights['sol'].position.x = 130;
 				}else if(parametro>0.7 && parametro<= 0.8){
 					scene.background= new THREE.Color("#fad098");
 					lights['sol'].intensity = 0.7;
+					lights['sol'].position.z = 90;
+					lights['sol'].position.x = 90;
 				}else if(parametro>0.8 && parametro<= 0.9){
 					scene.background= new THREE.Color("#feffd1");
+					lights['sol'].position.z = 60;
+					lights['sol'].position.x = 60;
 				}else if(parametro>0.9 && parametro<= 1){
 					scene.background= new THREE.Color("#95b7f5");
+					lights['sol'].position.z = 30;
+					lights['sol'].position.x = 30;
 				}else if(parametro>1 && parametro<= 1.1){
 					scene.background= new THREE.Color("#93cde6");
+					lights['sol'].position.z = 0;
+					lights['sol'].position.x = 0;
 				}else if(parametro>1.1 && parametro<= 1.2){
 					scene.background= new THREE.Color("#98e0eb");
 				}else if(parametro> 1.2){
 					scene.background= new THREE.Color("#98e0eb");
 				}
-				if(parametro > 0.8){
-					lights['sol'].intensity = 1;
+				if(parametro <= 0.5){
+					lights['point1'].castShadow = true;
+					lights['point2'].castShadow = true;
+					lights['point3'].castShadow = true;
+					lights['point4'].castShadow = true;
+					lights['point1'].intensity = 10;
+					lights['point2'].intensity = 10;
+					lights['point3'].intensity = 10;
+					lights['point4'].intensity = 10;
+					lights['sol'].castShadow = false;
+				}else if(parametro > 0.5){
+					lights['point1'].castShadow = false;
+					lights['point2'].castShadow = false;
+					lights['point3'].castShadow = false;
+					lights['point4'].castShadow = false;
+					lights['point1'].intensity = 0;
+					lights['point2'].intensity = 0;
+					lights['point3'].intensity = 0;
+					lights['point4'].intensity = 0;
+					lights['sol'].castShadow = true;
+					
 				}
+				if(parametro>0.8){
+					lights['sol'].intensity = 1;
+					
+				}
+			}
+		);
+		let folderPosition = gui.addFolder("Position");
+
+		let positionX = folderPosition.add(parametrosGUI, 'positionX').min(0).max(600).step(15).name("Position X");
+		positionX.onChange(function (parametro){
+			lights['sol'].position.x = parametro;
+			}
+		);
+		let positionY = folderPosition.add(parametrosGUI, 'positionY').min(0).max(600).step(15).name("Position Y");
+		positionY.onChange(function (parametro){
+			lights['sol'].position.y = parametro;
+			}
+		);
+		let positionZ = folderPosition.add(parametrosGUI, 'positionZ').min(0).max(600).step(15).name("Position Z");
+		positionZ.onChange(function (parametro){
+			lights['sol'].position.z = parametro;
 			}
 		);
 		gui.open();
