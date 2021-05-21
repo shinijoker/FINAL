@@ -72,14 +72,8 @@ var objLoading = function(){
 			scene.add(obj);
 			console.log("Carregou!");
 
-		},//Oque acontece quando terminar!
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},//O que acontece enquanto esta carregando
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}//o que acontece se der merda.
-	);
+		},	
+	)
 
 
 	//grama 2 direita//
@@ -113,13 +107,7 @@ var objLoading = function(){
 			scene.add(obj);
 			console.log("Carregou!");
 
-		},//Oque acontece quando terminar!
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},//O que acontece enquanto esta carregando
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}//o que acontece se der merda.
+		}
 	);
 
 
@@ -155,13 +143,7 @@ var objLoading = function(){
 			scene.add(obj);
 			console.log("Carregou!");
 
-		},//Oque acontece quando terminar!
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},//O que acontece enquanto esta carregando
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}//o que acontece se der merda.
+		}
 	);
 
 
@@ -197,13 +179,7 @@ var objLoading = function(){
 			scene.add(obj);
 			console.log("Carregou!");
 
-		},//Oque acontece quando terminar!
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},//O que acontece enquanto esta carregando
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}//o que acontece se der merda.
+		}
 	);
 
 
@@ -216,7 +192,7 @@ var objLoading = function(){
 	'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 		function(obj){
 			//atribui a cena, colore, reposiciona, rotaciona
-			elementos['ovelha'] = obj;
+			elementos['cerca1ds'] = obj;
 			
 			
 			obj.traverse( function (child){
@@ -249,18 +225,7 @@ var objLoading = function(){
 
 			scene.add(obj);
 
-			
-			
-			//staticbounding.push(objBox);
-			console.log("Carregou Ovelha");
-
-		},//Oque acontece quando terminar!
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},//O que acontece enquanto esta carregando
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}//o que acontece se der merda.
+		},
 	);
 	
 	//cerca1dnorte
@@ -268,7 +233,7 @@ var objLoading = function(){
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['ovelha'] = obj;
+				elementos['cerca1dn'] = obj;
 				
 				
 				obj.traverse( function (child){
@@ -303,16 +268,9 @@ var objLoading = function(){
 	
 				
 				
-				//staticbounding.push(objBox);
-				console.log("Carregou Ovelha");
+				
 	
-			},//Oque acontece quando terminar!
-			function(andamento){
-				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-			},//O que acontece enquanto esta carregando
-			function(error){
-				console.log(" Deu merda!: "+ error);
-			}//o que acontece se der merda.
+			},
 		);
 
 		//cerca1doeste
@@ -320,7 +278,7 @@ var objLoading = function(){
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['ovelha'] = obj;
+				elementos['cerca1do'] = obj;
 				
 				
 				obj.traverse( function (child){
@@ -352,19 +310,7 @@ var objLoading = function(){
 				
 	
 				scene.add(obj);
-	
-				
-				
-				//staticbounding.push(objBox);
-				console.log("Carregou Ovelha");
-	
-			},//Oque acontece quando terminar!
-			function(andamento){
-				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-			},//O que acontece enquanto esta carregando
-			function(error){
-				console.log(" Deu merda!: "+ error);
-			}//o que acontece se der merda.
+			},
 		);
 		
 		//cerca1dleste
@@ -372,7 +318,7 @@ var objLoading = function(){
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['ovelha'] = obj;
+				elementos['cerca1dl'] = obj;
 				
 				
 				obj.traverse( function (child){
@@ -404,19 +350,7 @@ var objLoading = function(){
 				
 	
 				scene.add(obj);
-	
-				
-				
-				//staticbounding.push(objBox);
-				console.log("Carregou Ovelha");
-	
-			},//Oque acontece quando terminar!
-			function(andamento){
-				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-			},//O que acontece enquanto esta carregando
-			function(error){
-				console.log(" Deu merda!: "+ error);
-			}//o que acontece se der merda.
+			},
 	);
 	//===============================//
 
@@ -429,7 +363,7 @@ var objLoading = function(){
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['ovelha'] = obj;
+				elementos['cerca2ds'] = obj;
 				
 				
 				obj.traverse( function (child){
@@ -464,16 +398,7 @@ var objLoading = function(){
 	
 				
 				
-				//staticbounding.push(objBox);
-				console.log("Carregou Ovelha");
-	
-			},//Oque acontece quando terminar!
-			function(andamento){
-				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-			},//O que acontece enquanto esta carregando
-			function(error){
-				console.log(" Deu merda!: "+ error);
-			}//o que acontece se der merda.
+			},
 		);
 		
 		//cerca2dnorte
@@ -481,7 +406,7 @@ var objLoading = function(){
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['ovelha'] = obj;
+					elementos['cerca2dn'] = obj;
 					
 					
 					obj.traverse( function (child){
@@ -514,18 +439,7 @@ var objLoading = function(){
 		
 					scene.add(obj);
 		
-					
-					
-					//staticbounding.push(objBox);
-					console.log("Carregou Ovelha");
-		
-				},//Oque acontece quando terminar!
-				function(andamento){
-					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-				},//O que acontece enquanto esta carregando
-				function(error){
-					console.log(" Deu merda!: "+ error);
-				}//o que acontece se der merda.
+				},
 			);
 	
 			//cerca2doeste
@@ -533,7 +447,7 @@ var objLoading = function(){
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['ovelha'] = obj;
+					elementos['cerca2d'] = obj;
 					
 					
 					obj.traverse( function (child){
@@ -566,18 +480,7 @@ var objLoading = function(){
 		
 					scene.add(obj);
 		
-					
-					
-					//staticbounding.push(objBox);
-					console.log("Carregou Ovelha");
-		
-				},//Oque acontece quando terminar!
-				function(andamento){
-					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-				},//O que acontece enquanto esta carregando
-				function(error){
-					console.log(" Deu merda!: "+ error);
-				}//o que acontece se der merda.
+				},
 			);
 			
 			//cerca2dleste
@@ -585,7 +488,7 @@ var objLoading = function(){
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['ovelha'] = obj;
+					elementos['cerca2dl'] = obj;
 					
 					
 					obj.traverse( function (child){
@@ -618,18 +521,7 @@ var objLoading = function(){
 		
 					scene.add(obj);
 		
-					
-					
-					//staticbounding.push(objBox);
-					console.log("Carregou Ovelha");
-		
-				},//Oque acontece quando terminar!
-				function(andamento){
-					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-				},//O que acontece enquanto esta carregando
-				function(error){
-					console.log(" Deu merda!: "+ error);
-				}//o que acontece se der merda.
+				},
 		);
 		//===============================//			
 
@@ -642,7 +534,7 @@ var objLoading = function(){
 		'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 			function(obj){
 				//atribui a cena, colore, reposiciona, rotaciona
-				elementos['ovelha'] = obj;
+				elementos['cerca1es'] = obj;
 				
 				
 				obj.traverse( function (child){
@@ -674,19 +566,7 @@ var objLoading = function(){
 				
 	
 				scene.add(obj);
-	
-				
-				
-				//staticbounding.push(objBox);
-				console.log("Carregou Ovelha");
-	
-			},//Oque acontece quando terminar!
-			function(andamento){
-				console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-			},//O que acontece enquanto esta carregando
-			function(error){
-				console.log(" Deu merda!: "+ error);
-			}//o que acontece se der merda.
+			},
 		);
 		
 		//cerca1enorte
@@ -694,7 +574,7 @@ var objLoading = function(){
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['ovelha'] = obj;
+					elementos['cerca1en'] = obj;
 					
 					
 					obj.traverse( function (child){
@@ -726,19 +606,8 @@ var objLoading = function(){
 					
 		
 					scene.add(obj);
-		
 					
-					
-					//staticbounding.push(objBox);
-					console.log("Carregou Ovelha");
-		
-				},//Oque acontece quando terminar!
-				function(andamento){
-					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-				},//O que acontece enquanto esta carregando
-				function(error){
-					console.log(" Deu merda!: "+ error);
-				}//o que acontece se der merda.
+				},
 			);
 	
 			//cerca1eoeste
@@ -746,7 +615,7 @@ var objLoading = function(){
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['ovelha'] = obj;
+					elementos['cerca1eo'] = obj;
 					
 					
 					obj.traverse( function (child){
@@ -778,19 +647,7 @@ var objLoading = function(){
 					
 		
 					scene.add(obj);
-		
-					
-					
-					//staticbounding.push(objBox);
-					console.log("Carregou Ovelha");
-		
-				},//Oque acontece quando terminar!
-				function(andamento){
-					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-				},//O que acontece enquanto esta carregando
-				function(error){
-					console.log(" Deu merda!: "+ error);
-				}//o que acontece se der merda.
+				},
 			);
 			
 			//cerca1eleste
@@ -798,7 +655,7 @@ var objLoading = function(){
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['ovelha'] = obj;
+					elementos['cerca1el'] = obj;
 					
 					
 					obj.traverse( function (child){
@@ -830,19 +687,7 @@ var objLoading = function(){
 					
 		
 					scene.add(obj);
-		
-					
-					
-					//staticbounding.push(objBox);
-					console.log("Carregou Ovelha");
-		
-				},//Oque acontece quando terminar!
-				function(andamento){
-					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-				},//O que acontece enquanto esta carregando
-				function(error){
-					console.log(" Deu merda!: "+ error);
-				}//o que acontece se der merda.
+				},
 		);
 		//===============================//
 	
@@ -855,7 +700,7 @@ var objLoading = function(){
 			'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 				function(obj){
 					//atribui a cena, colore, reposiciona, rotaciona
-					elementos['ovelha'] = obj;
+					elementos['cerca2es'] = obj;
 					
 					
 					obj.traverse( function (child){
@@ -887,19 +732,7 @@ var objLoading = function(){
 					
 		
 					scene.add(obj);
-		
-					
-					
-					//staticbounding.push(objBox);
-					console.log("Carregou Ovelha");
-		
-				},//Oque acontece quando terminar!
-				function(andamento){
-					console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-				},//O que acontece enquanto esta carregando
-				function(error){
-					console.log(" Deu merda!: "+ error);
-				}//o que acontece se der merda.
+				},
 			);
 			
 			//cerca2enorte
@@ -907,7 +740,7 @@ var objLoading = function(){
 				'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 					function(obj){
 						//atribui a cena, colore, reposiciona, rotaciona
-						elementos['ovelha'] = obj;
+						elementos['cerca2en'] = obj;
 						
 						
 						obj.traverse( function (child){
@@ -939,21 +772,8 @@ var objLoading = function(){
 			
 						//obj.rotation.x-=1.35;
 						
-			
 						scene.add(obj);
-			
-						
-						
-						//staticbounding.push(objBox);
-						console.log("Carregou Ovelha");
-			
-					},//Oque acontece quando terminar!
-					function(andamento){
-						console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-					},//O que acontece enquanto esta carregando
-					function(error){
-						console.log(" Deu merda!: "+ error);
-					}//o que acontece se der merda.
+					},
 				);
 		
 				//cerca2eoeste
@@ -961,7 +781,7 @@ var objLoading = function(){
 				'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 					function(obj){
 						//atribui a cena, colore, reposiciona, rotaciona
-						elementos['ovelha'] = obj;
+						elementos['cerca2eo'] = obj;
 						
 						
 						obj.traverse( function (child){
@@ -995,19 +815,7 @@ var objLoading = function(){
 						
 			
 						scene.add(obj);
-			
-						
-						
-						//staticbounding.push(objBox);
-						console.log("Carregou Ovelha");
-			
-					},//Oque acontece quando terminar!
-					function(andamento){
-						console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-					},//O que acontece enquanto esta carregando
-					function(error){
-						console.log(" Deu merda!: "+ error);
-					}//o que acontece se der merda.
+					},
 				);
 				
 				//cerca2eleste
@@ -1015,7 +823,7 @@ var objLoading = function(){
 				'assets/cerca/steelFence/fance.obj',//arquivo que vamos buscar
 					function(obj){
 						//atribui a cena, colore, reposiciona, rotaciona
-						elementos['ovelha'] = obj;
+						elementos['cerca2el'] = obj;
 						
 						
 						obj.traverse( function (child){
@@ -1049,19 +857,7 @@ var objLoading = function(){
 						
 			
 						scene.add(obj);
-			
-						
-						
-						//staticbounding.push(objBox);
-						console.log("Carregou Ovelha");
-			
-					},//Oque acontece quando terminar!
-					function(andamento){
-						console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-					},//O que acontece enquanto esta carregando
-					function(error){
-						console.log(" Deu merda!: "+ error);
-					}//o que acontece se der merda.
+					},
 			);
 	//===============================//		
 	
