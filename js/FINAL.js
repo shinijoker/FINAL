@@ -36,6 +36,158 @@ var clock = new THREE.Clock();
 
 var objLoading = function(){
 	loader = new THREE.OBJLoader();
+	//grama1direita
+	loader.load(
+		'assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_iterations-2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['parede1'] = obj;
+
+			obj.traverse( function (child){
+				if (child instanceof THREE.Mesh){
+					child.material = new THREE.MeshLambertMaterial({
+						map: new THREE.TextureLoader().load("assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_Diffuse.jpg")}
+						);
+					
+				}
+			});
+
+			obj.scale.y = .2;
+			obj.scale.z = .2;
+			obj.scale.x = .2;
+
+			obj.position.y = -8.3;
+			obj.position.z = -50;
+			obj.position.x = 50;
+
+			obj.rotation.x-=7.85;
+
+			scene.add(obj);
+			console.log("Carregou!");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	//grama2direita
+	loader.load(
+		'assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_iterations-2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['parede1'] = obj;
+
+			obj.traverse( function (child){
+				if (child instanceof THREE.Mesh){
+					child.material = new THREE.MeshLambertMaterial({
+						map: new THREE.TextureLoader().load("assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_Diffuse.jpg")}
+					);
+					
+				}
+			}
+			);
+
+			obj.scale.y = .2;
+			obj.scale.z = .2;
+			obj.scale.x = .2;
+
+			obj.position.y = -8.3;
+			obj.position.z = -150;
+			obj.position.x = 50;
+
+			obj.rotation.x-=7.85;
+
+			scene.add(obj);
+			console.log("Carregou!");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	//grama1esquerda
+	loader.load(
+		'assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_iterations-2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['parede1'] = obj;
+
+			obj.traverse( function (child){
+				if (child instanceof THREE.Mesh){
+					child.material = new THREE.MeshLambertMaterial({
+						map: new THREE.TextureLoader().load("assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_Diffuse.jpg")}
+					);
+					
+				}
+			}
+			);
+
+			obj.scale.y = .2;
+			obj.scale.z = .2;
+			obj.scale.x = .2;
+
+			obj.position.y = -8.3;
+			obj.position.z = -50;
+			obj.position.x = -50;
+
+			obj.rotation.x-=7.85;
+
+			scene.add(obj);
+			console.log("Carregou!");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
+	loader = new THREE.OBJLoader();
+	//grama2esquerda
+	loader.load(
+		'assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_iterations-2.obj',//arquivo que vamos buscar
+		function(obj){
+			//atribui a cena, colore, reposiciona, rotaciona
+			elementos['parede1'] = obj;
+
+			obj.traverse( function (child){
+				if (child instanceof THREE.Mesh){
+					child.material = new THREE.MeshLambertMaterial({
+						map: new THREE.TextureLoader().load("assets/chao/10450_Rectangular_Grass_Patch_L3.123c827d110a-1347-4381-9208-e4f735762647/10450_Rectangular_Grass_Patch_v1_Diffuse.jpg")}
+					);
+					
+				}
+			}
+			);
+
+			obj.scale.y = .2;
+			obj.scale.z = .2;
+			obj.scale.x = .2;
+
+			obj.position.y = -8.3;
+			obj.position.z = -150;
+			obj.position.x = -50;
+
+			obj.rotation.x-=7.85;
+
+			scene.add(obj);
+			console.log("Carregou!");
+
+		},//Oque acontece quando terminar!
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},//O que acontece enquanto esta carregando
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}//o que acontece se der merda.
+	);
 };
 //troca a ação do nosso modelo
 const setAction = function(toAction) {
